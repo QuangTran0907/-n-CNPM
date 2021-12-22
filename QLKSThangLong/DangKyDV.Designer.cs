@@ -84,14 +84,14 @@ namespace QLKSThangLong
             // txtMaPDV
             // 
             this.txtMaPDV.Enabled = false;
-            this.txtMaPDV.Location = new System.Drawing.Point(92, 21);
+            this.txtMaPDV.Location = new System.Drawing.Point(106, 21);
             this.txtMaPDV.Name = "txtMaPDV";
             this.txtMaPDV.Size = new System.Drawing.Size(64, 22);
             this.txtMaPDV.TabIndex = 5;
             // 
             // txtSoLuongDV
             // 
-            this.txtSoLuongDV.Location = new System.Drawing.Point(92, 168);
+            this.txtSoLuongDV.Location = new System.Drawing.Point(107, 168);
             this.txtSoLuongDV.Name = "txtSoLuongDV";
             this.txtSoLuongDV.Size = new System.Drawing.Size(64, 22);
             this.txtSoLuongDV.TabIndex = 7;
@@ -108,7 +108,7 @@ namespace QLKSThangLong
             // txtSoPhongDV
             // 
             this.txtSoPhongDV.Enabled = false;
-            this.txtSoPhongDV.Location = new System.Drawing.Point(92, 68);
+            this.txtSoPhongDV.Location = new System.Drawing.Point(106, 68);
             this.txtSoPhongDV.Name = "txtSoPhongDV";
             this.txtSoPhongDV.Size = new System.Drawing.Size(65, 22);
             this.txtSoPhongDV.TabIndex = 9;
