@@ -30,33 +30,33 @@ namespace QLKSThangLong
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiDichVu));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvQLDV = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMaDV = new System.Windows.Forms.TextBox();
+            this.txtGiaDV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTenDV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThemDV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoaDV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnResetDV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCapNhatDV = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnTroVeDV = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLDV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvQLDV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 201);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 224);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvQLDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQLDV.Location = new System.Drawing.Point(364, 67);
+            this.dgvQLDV.Name = "dgvQLDV";
+            this.dgvQLDV.RowHeadersWidth = 51;
+            this.dgvQLDV.RowTemplate.Height = 24;
+            this.dgvQLDV.Size = new System.Drawing.Size(410, 239);
+            this.dgvQLDV.TabIndex = 0;
             // 
             // label1
             // 
@@ -67,19 +67,19 @@ namespace QLKSThangLong
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Dịch vụ";
             // 
-            // textBox1
+            // txtMaDV
             // 
-            this.textBox1.Location = new System.Drawing.Point(151, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtMaDV.Location = new System.Drawing.Point(151, 21);
+            this.txtMaDV.Name = "txtMaDV";
+            this.txtMaDV.Size = new System.Drawing.Size(100, 22);
+            this.txtMaDV.TabIndex = 2;
             // 
-            // textBox2
+            // txtGiaDV
             // 
-            this.textBox2.Location = new System.Drawing.Point(151, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 4;
+            this.txtGiaDV.Location = new System.Drawing.Point(151, 85);
+            this.txtGiaDV.Name = "txtGiaDV";
+            this.txtGiaDV.Size = new System.Drawing.Size(100, 22);
+            this.txtGiaDV.TabIndex = 4;
             // 
             // label2
             // 
@@ -90,12 +90,12 @@ namespace QLKSThangLong
             this.label2.TabIndex = 3;
             this.label2.Text = "Giá";
             // 
-            // textBox3
+            // txtTenDV
             // 
-            this.textBox3.Location = new System.Drawing.Point(151, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 22);
-            this.textBox3.TabIndex = 6;
+            this.txtTenDV.Location = new System.Drawing.Point(151, 54);
+            this.txtTenDV.Name = "txtTenDV";
+            this.txtTenDV.Size = new System.Drawing.Size(162, 22);
+            this.txtTenDV.TabIndex = 6;
             // 
             // label3
             // 
@@ -108,95 +108,95 @@ namespace QLKSThangLong
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtTenDV);
+            this.groupBox1.Controls.Add(this.txtGiaDV);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtMaDV);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(282, 55);
+            this.groupBox1.Location = new System.Drawing.Point(12, 62);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(345, 122);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
-            // simpleButton4
+            // btnThemDV
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(36, 64);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton4.Size = new System.Drawing.Size(94, 47);
-            this.simpleButton4.TabIndex = 22;
-            this.simpleButton4.Text = "Thêm";
+            this.btnThemDV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnThemDV.Location = new System.Drawing.Point(35, 198);
+            this.btnThemDV.Name = "btnThemDV";
+            this.btnThemDV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnThemDV.Size = new System.Drawing.Size(94, 47);
+            this.btnThemDV.TabIndex = 22;
+            this.btnThemDV.Text = "Thêm";
             // 
-            // simpleButton3
+            // btnXoaDV
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(36, 130);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton3.Size = new System.Drawing.Size(94, 47);
-            this.simpleButton3.TabIndex = 21;
-            this.simpleButton3.Text = "Xóa";
+            this.btnXoaDV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnXoaDV.Location = new System.Drawing.Point(35, 264);
+            this.btnXoaDV.Name = "btnXoaDV";
+            this.btnXoaDV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnXoaDV.Size = new System.Drawing.Size(94, 47);
+            this.btnXoaDV.TabIndex = 21;
+            this.btnXoaDV.Text = "Xóa";
             // 
-            // simpleButton2
+            // btnResetDV
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(151, 134);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton2.Size = new System.Drawing.Size(94, 38);
-            this.simpleButton2.TabIndex = 20;
-            this.simpleButton2.Text = "Hủy";
+            this.btnResetDV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnResetDV.Location = new System.Drawing.Point(150, 268);
+            this.btnResetDV.Name = "btnResetDV";
+            this.btnResetDV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnResetDV.Size = new System.Drawing.Size(94, 38);
+            this.btnResetDV.TabIndex = 20;
+            this.btnResetDV.Text = "Reset";
             // 
-            // simpleButton1
+            // btnCapNhatDV
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(151, 63);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(116, 48);
-            this.simpleButton1.TabIndex = 19;
-            this.simpleButton1.Text = " Cập nhật";
+            this.btnCapNhatDV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnCapNhatDV.Location = new System.Drawing.Point(150, 197);
+            this.btnCapNhatDV.Name = "btnCapNhatDV";
+            this.btnCapNhatDV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnCapNhatDV.Size = new System.Drawing.Size(116, 48);
+            this.btnCapNhatDV.TabIndex = 19;
+            this.btnCapNhatDV.Text = " Cập nhật";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(276, 9);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(263, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(273, 32);
+            this.label4.Size = new System.Drawing.Size(292, 36);
             this.label4.TabIndex = 23;
             this.label4.Text = "QUẢN LÝ DỊCH VỤ";
             // 
-            // simpleButton5
+            // btnTroVeDV
             // 
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(694, 148);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton5.Size = new System.Drawing.Size(94, 29);
-            this.simpleButton5.TabIndex = 24;
-            this.simpleButton5.Text = "Trở về";
+            this.btnTroVeDV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnTroVeDV.Location = new System.Drawing.Point(679, 312);
+            this.btnTroVeDV.Name = "btnTroVeDV";
+            this.btnTroVeDV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnTroVeDV.Size = new System.Drawing.Size(94, 29);
+            this.btnTroVeDV.TabIndex = 24;
+            this.btnTroVeDV.Text = "Trở về";
             // 
             // LoaiDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 437);
-            this.Controls.Add(this.simpleButton5);
+            this.ClientSize = new System.Drawing.Size(786, 355);
+            this.Controls.Add(this.btnTroVeDV);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnThemDV);
+            this.Controls.Add(this.btnXoaDV);
+            this.Controls.Add(this.btnResetDV);
+            this.Controls.Add(this.btnCapNhatDV);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvQLDV);
             this.Name = "LoaiDichVu";
             this.Text = "Loại Dịch vụ";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLDV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -206,19 +206,19 @@ namespace QLKSThangLong
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvQLDV;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMaDV;
+        private System.Windows.Forms.TextBox txtGiaDV;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTenDV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnThemDV;
+        private DevExpress.XtraEditors.SimpleButton btnXoaDV;
+        private DevExpress.XtraEditors.SimpleButton btnResetDV;
+        private DevExpress.XtraEditors.SimpleButton btnCapNhatDV;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton btnTroVeDV;
     }
 }

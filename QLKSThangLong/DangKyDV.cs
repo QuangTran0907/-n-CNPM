@@ -24,7 +24,7 @@ namespace QLKSThangLong
 
         private void DangKyDV_Load(object sender, EventArgs e)
         {
-            //hé lô mấy cưng
+            
         }
     }
 }

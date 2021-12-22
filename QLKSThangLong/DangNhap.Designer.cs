@@ -30,8 +30,8 @@ namespace QLKSThangLong
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
-            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.txtTaiKhoanDN = new System.Windows.Forms.TextBox();
+            this.txtMatKhauDN = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
@@ -41,20 +41,20 @@ namespace QLKSThangLong
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtTaiKhoan
+            // txtTaiKhoanDN
             // 
-            this.txtTaiKhoan.Location = new System.Drawing.Point(222, 71);
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(232, 22);
-            this.txtTaiKhoan.TabIndex = 2;
+            this.txtTaiKhoanDN.Location = new System.Drawing.Point(222, 71);
+            this.txtTaiKhoanDN.Name = "txtTaiKhoanDN";
+            this.txtTaiKhoanDN.Size = new System.Drawing.Size(232, 22);
+            this.txtTaiKhoanDN.TabIndex = 2;
             // 
-            // txtMatKhau
+            // txtMatKhauDN
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(222, 110);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(232, 22);
-            this.txtMatKhau.TabIndex = 3;
+            this.txtMatKhauDN.Location = new System.Drawing.Point(222, 110);
+            this.txtMatKhauDN.Name = "txtMatKhauDN";
+            this.txtMatKhauDN.PasswordChar = '*';
+            this.txtMatKhauDN.Size = new System.Drawing.Size(232, 22);
+            this.txtMatKhauDN.TabIndex = 3;
             // 
             // btnDangNhap
             // 
@@ -117,8 +117,8 @@ namespace QLKSThangLong
             this.Controls.Add(this.pictureEdit2);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.btnDangNhap);
-            this.Controls.Add(this.txtMatKhau);
-            this.Controls.Add(this.txtTaiKhoan);
+            this.Controls.Add(this.txtMatKhauDN);
+            this.Controls.Add(this.txtTaiKhoanDN);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DangNhap";
@@ -134,8 +134,8 @@ namespace QLKSThangLong
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtTaiKhoan;
-        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.TextBox txtTaiKhoanDN;
+        private System.Windows.Forms.TextBox txtMatKhauDN;
         private System.Windows.Forms.Button btnDangNhap;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
