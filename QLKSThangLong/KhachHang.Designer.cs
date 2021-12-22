@@ -29,6 +29,9 @@ namespace QLKSThangLong
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHang));
             this.dgvQLKH = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +51,10 @@ namespace QLKSThangLong
             this.btnXoaKH = new DevExpress.XtraEditors.SimpleButton();
             this.btnResetKH = new DevExpress.XtraEditors.SimpleButton();
             this.btnCapNhatKH = new DevExpress.XtraEditors.SimpleButton();
+            this.dgvMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLKH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,13 +62,46 @@ namespace QLKSThangLong
             // 
             // dgvQLKH
             // 
+            this.dgvQLKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvQLKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQLKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMaKH,
+            this.dgvTenKH,
+            this.dgvCMND,
+            this.dgvSDT});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLKH.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvQLKH.Location = new System.Drawing.Point(350, 72);
             this.dgvQLKH.Name = "dgvQLKH";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLKH.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvQLKH.RowHeadersVisible = false;
             this.dgvQLKH.RowHeadersWidth = 51;
             this.dgvQLKH.RowTemplate.Height = 24;
+            this.dgvQLKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQLKH.Size = new System.Drawing.Size(582, 395);
             this.dgvQLKH.TabIndex = 0;
+            this.dgvQLKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLKH_CellClick);
             // 
             // label1
             // 
@@ -175,7 +215,7 @@ namespace QLKSThangLong
             // 
             // btnTroVeKH
             // 
-            this.btnTroVeKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnTroVeKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTroVeKH.ImageOptions.Image")));
             this.btnTroVeKH.Location = new System.Drawing.Point(838, 473);
             this.btnTroVeKH.Name = "btnTroVeKH";
             this.btnTroVeKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -185,7 +225,7 @@ namespace QLKSThangLong
             // 
             // btnThemKH
             // 
-            this.btnThemKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnThemKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemKH.ImageOptions.Image")));
             this.btnThemKH.Location = new System.Drawing.Point(42, 359);
             this.btnThemKH.Name = "btnThemKH";
             this.btnThemKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -195,7 +235,7 @@ namespace QLKSThangLong
             // 
             // btnXoaKH
             // 
-            this.btnXoaKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnXoaKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaKH.ImageOptions.Image")));
             this.btnXoaKH.Location = new System.Drawing.Point(42, 425);
             this.btnXoaKH.Name = "btnXoaKH";
             this.btnXoaKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -205,7 +245,7 @@ namespace QLKSThangLong
             // 
             // btnResetKH
             // 
-            this.btnResetKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnResetKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResetKH.ImageOptions.Image")));
             this.btnResetKH.Location = new System.Drawing.Point(157, 429);
             this.btnResetKH.Name = "btnResetKH";
             this.btnResetKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -216,13 +256,37 @@ namespace QLKSThangLong
             // 
             // btnCapNhatKH
             // 
-            this.btnCapNhatKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnCapNhatKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhatKH.ImageOptions.Image")));
             this.btnCapNhatKH.Location = new System.Drawing.Point(157, 358);
             this.btnCapNhatKH.Name = "btnCapNhatKH";
             this.btnCapNhatKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnCapNhatKH.Size = new System.Drawing.Size(116, 48);
             this.btnCapNhatKH.TabIndex = 15;
             this.btnCapNhatKH.Text = " Cập nhật";
+            // 
+            // dgvMaKH
+            // 
+            this.dgvMaKH.HeaderText = "Mã khách hàng";
+            this.dgvMaKH.MinimumWidth = 6;
+            this.dgvMaKH.Name = "dgvMaKH";
+            // 
+            // dgvTenKH
+            // 
+            this.dgvTenKH.HeaderText = "Tên khách hàng";
+            this.dgvTenKH.MinimumWidth = 6;
+            this.dgvTenKH.Name = "dgvTenKH";
+            // 
+            // dgvCMND
+            // 
+            this.dgvCMND.HeaderText = "Số CMND/CCCD";
+            this.dgvCMND.MinimumWidth = 6;
+            this.dgvCMND.Name = "dgvCMND";
+            // 
+            // dgvSDT
+            // 
+            this.dgvSDT.HeaderText = "Số điện thoại";
+            this.dgvSDT.MinimumWidth = 6;
+            this.dgvSDT.Name = "dgvSDT";
             // 
             // KhachHang
             // 
@@ -271,5 +335,9 @@ namespace QLKSThangLong
         private DevExpress.XtraEditors.SimpleButton btnTroVeKH;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCMND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSDT;
     }
 }

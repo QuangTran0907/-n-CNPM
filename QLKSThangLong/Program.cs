@@ -16,7 +16,7 @@ namespace QLKSThangLong
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoaiDichVu());
+            Application.Run(new NhanVien());
         }
     }
 }

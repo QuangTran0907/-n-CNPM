@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLKSThangLong.Model;
 
 namespace QLKSThangLong
 {
     public partial class Form1 : Form
     {
+        DbContextQLKS db = new DbContextQLKS();
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +36,8 @@ namespace QLKSThangLong
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            galleryControl1.Gallery.ImageSize = new Size(80, 80);
+            group1.Gallery.ImageSize = new Size(80, 80);
+            
         }
 
         private void galleryControl1_Click(object sender, EventArgs e)

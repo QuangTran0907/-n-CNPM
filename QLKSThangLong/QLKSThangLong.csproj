@@ -38,8 +38,17 @@
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,6 +90,18 @@
     <Compile Include="KhachHang.Designer.cs">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CHITIETPHIEUTHUE.cs" />
+    <Compile Include="Model\DbContextQLKS.cs" />
+    <Compile Include="Model\DICHVU.cs" />
+    <Compile Include="Model\HOADON.cs" />
+    <Compile Include="Model\KHACHHANG.cs" />
+    <Compile Include="Model\NHANVIEN.cs" />
+    <Compile Include="Model\PHIEUDANGKIDV.cs" />
+    <Compile Include="Model\PHIEUTHUEPHONG.cs" />
+    <Compile Include="Model\PHONG.cs" />
+    <Compile Include="Model\SUDUNGVT.cs" />
+    <Compile Include="Model\TAIKHOAN.cs" />
+    <Compile Include="Model\VATTU.cs" />
     <Compile Include="NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +139,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -173,5 +195,6 @@
   <ItemGroup>
     <None Include="Resources\png-transparent-face-icon-user-icon-design-user-profile-share-icon-avatar-black-and-white-silhouette1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
