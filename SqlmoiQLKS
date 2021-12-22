@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [QLKSThangLongg]    Script Date: 22/12/2021 5:21:08 PM ******/
+/****** Object:  Database [QLKSThangLongg]    Script Date: 22/12/2021 6:54:28 PM ******/
 CREATE DATABASE [QLKSThangLongg]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,10 +82,10 @@ ALTER DATABASE [QLKSThangLongg] SET QUERY_STORE = OFF
 GO
 USE [QLKSThangLongg]
 GO
-/****** Object:  User [quang]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  User [quang]    Script Date: 22/12/2021 6:54:28 PM ******/
 CREATE USER [quang] WITHOUT LOGIN WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  UserDefinedFunction [dbo].[AUTO_IDKH]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[AUTO_IDKH]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,7 +107,7 @@ BEGIN
 	RETURN @ID
 END
 GO
-/****** Object:  UserDefinedFunction [dbo].[AUTO_IDPDV]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[AUTO_IDPDV]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -129,7 +129,7 @@ BEGIN
 	RETURN @ID
 END
 GO
-/****** Object:  UserDefinedFunction [dbo].[AUTO_IDPTP]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[AUTO_IDPTP]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +151,7 @@ BEGIN
 	RETURN @ID
 END
 GO
-/****** Object:  Table [dbo].[CHITIETPHIEUTHUE]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[CHITIETPHIEUTHUE]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -168,7 +168,7 @@ CREATE TABLE [dbo].[CHITIETPHIEUTHUE](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DICHVU]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[DICHVU]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -183,7 +183,7 @@ CREATE TABLE [dbo].[DICHVU](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HOADON]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[HOADON]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -200,7 +200,7 @@ CREATE TABLE [dbo].[HOADON](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[KHACHHANG]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[KHACHHANG]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +216,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -235,7 +235,7 @@ CREATE TABLE [dbo].[NHANVIEN](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PHIEUDANGKIDV]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[PHIEUDANGKIDV]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -246,13 +246,14 @@ CREATE TABLE [dbo].[PHIEUDANGKIDV](
 	[Tongtien] [money] NULL,
 	[SoPhong] [char](5) NULL,
 	[MaDV] [char](5) NULL,
+	[SoLuong] [tinyint] NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[MaPhieuDV] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PHIEUTHUEPHONG]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[PHIEUTHUEPHONG]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -268,7 +269,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PHONG]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[PHONG]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -287,7 +288,7 @@ CREATE TABLE [dbo].[PHONG](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SUDUNGVT]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[SUDUNGVT]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -304,7 +305,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TAIKHOAN]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[TAIKHOAN]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -320,7 +321,7 @@ CREATE TABLE [dbo].[TAIKHOAN](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[VATTU]    Script Date: 22/12/2021 5:21:09 PM ******/
+/****** Object:  Table [dbo].[VATTU]    Script Date: 22/12/2021 6:54:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -348,7 +349,7 @@ INSERT [dbo].[NHANVIEN] ([MaNV], [TenNV], [GioiTinh], [BoPhanLamViec], [SDT], [D
 INSERT [dbo].[NHANVIEN] ([MaNV], [TenNV], [GioiTinh], [BoPhanLamViec], [SDT], [DiaChi], [TrangThai]) VALUES (N'NV06 ', N'Lê Trọng Phú', N'Nữ', N'Tiếp Tân', N'099999999', N'Tiền Giang', 1)
 INSERT [dbo].[NHANVIEN] ([MaNV], [TenNV], [GioiTinh], [BoPhanLamViec], [SDT], [DiaChi], [TrangThai]) VALUES (N'NV07 ', N'Lê Trọng Phước', N'Nữ', N'Tiếp Tân', N'099999999', N'Tiền Giang', 1)
 GO
-INSERT [dbo].[PHIEUDANGKIDV] ([MaPhieuDV], [NgaySuDung], [Tongtien], [SoPhong], [MaDV]) VALUES (N'PDV01', CAST(N'2010-10-10T00:00:00.000' AS DateTime), 15000.0000, N'BT01 ', N'DV01 ')
+INSERT [dbo].[PHIEUDANGKIDV] ([MaPhieuDV], [NgaySuDung], [Tongtien], [SoPhong], [MaDV], [SoLuong]) VALUES (N'PDV01', CAST(N'2010-10-10T00:00:00.000' AS DateTime), 15000.0000, N'BT01 ', N'DV01 ', 2)
 GO
 INSERT [dbo].[PHIEUTHUEPHONG] ([MaPhieuThue], [NgayThuePhong], [MaKH], [MaNV]) VALUES (N'PTP01', CAST(N'2010-10-10T00:00:00.000' AS DateTime), N'KH01 ', N'NV01 ')
 GO
