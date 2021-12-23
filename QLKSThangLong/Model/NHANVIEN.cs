@@ -12,7 +12,7 @@ namespace QLKSThangLong.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHANVIEN()
         {
-            PHIEUTHUEPHONG = new HashSet<PHIEUTHUEPHONG>();
+            PHIEUTHUEPHONGs = new HashSet<PHIEUTHUEPHONG>();
         }
 
         [Key]
@@ -37,6 +37,6 @@ namespace QLKSThangLong.Model
         public bool? TrangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUTHUEPHONG> PHIEUTHUEPHONG { get; set; }
+        public virtual ICollection<PHIEUTHUEPHONG> PHIEUTHUEPHONGs { get; set; }
     }
 }

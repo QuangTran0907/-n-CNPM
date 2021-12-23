@@ -29,15 +29,8 @@ namespace QLKSThangLong
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem4 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem5 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem6 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem7 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -60,6 +53,15 @@ namespace QLKSThangLong
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -76,11 +78,17 @@ namespace QLKSThangLong
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.group1 = new DevExpress.XtraBars.Ribbon.GalleryControl();
+            this.galleryControl1 = new DevExpress.XtraBars.Ribbon.GalleryControl();
+            this.galleryControlClient2 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
+            this.galleryControl2 = new DevExpress.XtraBars.Ribbon.GalleryControl();
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
+            this.ppMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.group1)).BeginInit();
-            this.group1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).BeginInit();
+            this.galleryControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryControl2)).BeginInit();
+            this.galleryControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ppMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -109,9 +117,18 @@ namespace QLKSThangLong
             this.barButtonItem16,
             this.barButtonItem17,
             this.barButtonItem18,
-            this.barButtonItem19});
+            this.barButtonItem19,
+            this.barButtonItem20,
+            this.barButtonItem21,
+            this.barButtonItem22,
+            this.barButtonItem23,
+            this.barButtonItem24,
+            this.barButtonItem25,
+            this.barButtonItem26,
+            this.barButtonItem27,
+            this.barButtonItem28});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 22;
+            this.ribbonControl1.MaxItemId = 31;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2,
@@ -278,6 +295,60 @@ namespace QLKSThangLong
             this.barButtonItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem19.ImageOptions.SvgImage")));
             this.barButtonItem19.Name = "barButtonItem19";
             // 
+            // barButtonItem20
+            // 
+            this.barButtonItem20.Caption = "Hoa";
+            this.barButtonItem20.Id = 22;
+            this.barButtonItem20.Name = "barButtonItem20";
+            // 
+            // barButtonItem21
+            // 
+            this.barButtonItem21.Caption = "Quả";
+            this.barButtonItem21.Id = 23;
+            this.barButtonItem21.Name = "barButtonItem21";
+            // 
+            // barButtonItem22
+            // 
+            this.barButtonItem22.Caption = "Hoa";
+            this.barButtonItem22.Id = 24;
+            this.barButtonItem22.Name = "barButtonItem22";
+            // 
+            // barButtonItem23
+            // 
+            this.barButtonItem23.Caption = "Quả";
+            this.barButtonItem23.Id = 25;
+            this.barButtonItem23.Name = "barButtonItem23";
+            // 
+            // barButtonItem24
+            // 
+            this.barButtonItem24.Caption = "Chuối";
+            this.barButtonItem24.Id = 26;
+            this.barButtonItem24.Name = "barButtonItem24";
+            // 
+            // barButtonItem25
+            // 
+            this.barButtonItem25.Caption = "Đăng ký";
+            this.barButtonItem25.Id = 27;
+            this.barButtonItem25.Name = "barButtonItem25";
+            // 
+            // barButtonItem26
+            // 
+            this.barButtonItem26.Caption = "Thanh toán";
+            this.barButtonItem26.Id = 28;
+            this.barButtonItem26.Name = "barButtonItem26";
+            // 
+            // barButtonItem27
+            // 
+            this.barButtonItem27.Caption = "Đăng ký";
+            this.barButtonItem27.Id = 29;
+            this.barButtonItem27.Name = "barButtonItem27";
+            // 
+            // barButtonItem28
+            // 
+            this.barButtonItem28.Caption = "Thanh toán";
+            this.barButtonItem28.Id = 30;
+            this.barButtonItem28.Name = "barButtonItem28";
+            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -376,51 +447,44 @@ namespace QLKSThangLong
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
-            // group1
+            // galleryControl1
             // 
-            this.group1.Controls.Add(this.galleryControlClient1);
+            this.galleryControl1.Controls.Add(this.galleryControlClient2);
+            this.galleryControl1.Location = new System.Drawing.Point(678, 364);
+            this.galleryControl1.Name = "galleryControl1";
+            this.galleryControl1.Size = new System.Drawing.Size(120, 95);
+            this.galleryControl1.TabIndex = 3;
+            this.galleryControl1.Text = "galleryControl1";
             // 
+            // galleryControlClient2
             // 
+            this.galleryControlClient2.GalleryControl = this.galleryControl1;
+            this.galleryControlClient2.Location = new System.Drawing.Point(2, 2);
+            this.galleryControlClient2.Size = new System.Drawing.Size(95, 91);
             // 
-            galleryItemGroup1.Caption = "Phòng";
-            galleryItemGroup1.CaptionAlignment = DevExpress.XtraBars.Ribbon.GalleryItemGroupCaptionAlignment.Center;
-            galleryItem1.Caption = "Item1";
-            galleryItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            galleryItem1.Value = 0;
-            galleryItem2.Caption = "Item2";
-            galleryItem2.Value = 1;
-            galleryItem3.Caption = "Item3";
-            galleryItem3.Value = 2;
-            galleryItem4.Caption = "Item4";
-            galleryItem4.Value = 3;
-            galleryItem5.Caption = "Item5";
-            galleryItem5.Value = 4;
-            galleryItem6.Caption = "Item6";
-            galleryItem6.Value = 5;
-            galleryItem7.Caption = "Item1";
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1,
-            galleryItem2,
-            galleryItem3,
-            galleryItem4,
-            galleryItem5,
-            galleryItem6,
-            galleryItem7});
-            this.group1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1});
-            this.group1.Gallery.ShowItemText = true;
-            this.group1.Location = new System.Drawing.Point(12, 189);
-            this.group1.Name = "group1";
-            this.group1.Size = new System.Drawing.Size(1201, 404);
-            this.group1.TabIndex = 1;
-            this.group1.Text = "galleryControl1";
-            this.group1.Click += new System.EventHandler(this.galleryControl1_Click);
+            // galleryControl2
+            // 
+            this.galleryControl2.Controls.Add(this.galleryControlClient1);
+            this.galleryControl2.Location = new System.Drawing.Point(0, 189);
+            this.galleryControl2.Name = "galleryControl2";
+            this.galleryControl2.Size = new System.Drawing.Size(1225, 380);
+            this.galleryControl2.TabIndex = 3;
+            this.galleryControl2.Text = "galleryControl2";
             // 
             // galleryControlClient1
             // 
-            this.galleryControlClient1.GalleryControl = this.group1;
+            this.galleryControlClient1.GalleryControl = this.galleryControl2;
             this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
-            this.galleryControlClient1.Size = new System.Drawing.Size(1176, 400);
+            this.galleryControlClient1.Size = new System.Drawing.Size(1200, 376);
+            // 
+            // ppMenu1
+            // 
+            this.ppMenu1.ItemLinks.Add(this.barButtonItem27);
+            this.ppMenu1.ItemLinks.Add(this.barButtonItem28);
+            this.ppMenu1.Name = "ppMenu1";
+            this.ppMenu1.Ribbon = this.ribbonControl1;
+            this.ppMenu1.CloseUp += new System.EventHandler(this.ppMenu1_CloseUp);
+            this.ppMenu1.Popup += new System.EventHandler(this.ppMenu1_Popup);
             // 
             // Form1
             // 
@@ -428,14 +492,17 @@ namespace QLKSThangLong
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1225, 605);
-            this.Controls.Add(this.group1);
+            this.Controls.Add(this.galleryControl2);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.group1)).EndInit();
-            this.group1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).EndInit();
+            this.galleryControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.galleryControl2)).EndInit();
+            this.galleryControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ppMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,8 +548,20 @@ namespace QLKSThangLong
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.Ribbon.GalleryControl group1;
+        private DevExpress.XtraBars.Ribbon.GalleryControl galleryControl1;
+        private DevExpress.XtraBars.Ribbon.GalleryControlClient galleryControlClient2;
+        private DevExpress.XtraBars.Ribbon.GalleryControl galleryControl2;
         private DevExpress.XtraBars.Ribbon.GalleryControlClient galleryControlClient1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem21;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem22;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem24;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem25;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem26;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem27;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem28;
+        private DevExpress.XtraBars.PopupMenu ppMenu1;
     }
 }
 

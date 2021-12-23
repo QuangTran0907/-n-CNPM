@@ -29,11 +29,17 @@ namespace QLKSThangLong
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             this.dgvQLNV = new System.Windows.Forms.DataGridView();
+            this.dgvMaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvBPLV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbBoPhanLamViec = new System.Windows.Forms.ComboBox();
             this.rbNu = new System.Windows.Forms.RadioButton();
@@ -57,12 +63,6 @@ namespace QLKSThangLong
             this.txtTimKiemNV = new System.Windows.Forms.TextBox();
             this.btnTroVeNV = new DevExpress.XtraEditors.SimpleButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.dgvMaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvGT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvBPLV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,14 +71,14 @@ namespace QLKSThangLong
             // dgvQLNV
             // 
             this.dgvQLNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvQLNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvMaNhanVien,
@@ -87,24 +87,24 @@ namespace QLKSThangLong
             this.dgvBPLV,
             this.dgvSDT,
             this.dgvDiaChi});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvQLNV.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLNV.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvQLNV.Location = new System.Drawing.Point(332, 61);
             this.dgvQLNV.Name = "dgvQLNV";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLNV.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLNV.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvQLNV.RowHeadersVisible = false;
             this.dgvQLNV.RowHeadersWidth = 51;
             this.dgvQLNV.RowTemplate.Height = 24;
@@ -112,6 +112,42 @@ namespace QLKSThangLong
             this.dgvQLNV.Size = new System.Drawing.Size(600, 501);
             this.dgvQLNV.TabIndex = 0;
             this.dgvQLNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLNV_CellClick);
+            // 
+            // dgvMaNhanVien
+            // 
+            this.dgvMaNhanVien.HeaderText = "Mã nhân viên";
+            this.dgvMaNhanVien.MinimumWidth = 6;
+            this.dgvMaNhanVien.Name = "dgvMaNhanVien";
+            // 
+            // dgvTen
+            // 
+            this.dgvTen.HeaderText = "Tên";
+            this.dgvTen.MinimumWidth = 6;
+            this.dgvTen.Name = "dgvTen";
+            // 
+            // dgvGT
+            // 
+            this.dgvGT.HeaderText = "Giới tính";
+            this.dgvGT.MinimumWidth = 6;
+            this.dgvGT.Name = "dgvGT";
+            // 
+            // dgvBPLV
+            // 
+            this.dgvBPLV.HeaderText = "Bộ Phận Làm Việc";
+            this.dgvBPLV.MinimumWidth = 6;
+            this.dgvBPLV.Name = "dgvBPLV";
+            // 
+            // dgvSDT
+            // 
+            this.dgvSDT.HeaderText = "Số điện thoại";
+            this.dgvSDT.MinimumWidth = 6;
+            this.dgvSDT.Name = "dgvSDT";
+            // 
+            // dgvDiaChi
+            // 
+            this.dgvDiaChi.HeaderText = "Địa chỉ";
+            this.dgvDiaChi.MinimumWidth = 6;
+            this.dgvDiaChi.Name = "dgvDiaChi";
             // 
             // groupBox1
             // 
@@ -138,6 +174,7 @@ namespace QLKSThangLong
             // 
             // cbbBoPhanLamViec
             // 
+            this.cbbBoPhanLamViec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbBoPhanLamViec.FormattingEnabled = true;
             this.cbbBoPhanLamViec.Items.AddRange(new object[] {
             "Quản lý",
@@ -206,6 +243,7 @@ namespace QLKSThangLong
             // txtDiaChiNV
             // 
             this.txtDiaChiNV.Location = new System.Drawing.Point(70, 265);
+            this.txtDiaChiNV.MaxLength = 80;
             this.txtDiaChiNV.Name = "txtDiaChiNV";
             this.txtDiaChiNV.Size = new System.Drawing.Size(219, 22);
             this.txtDiaChiNV.TabIndex = 7;
@@ -222,6 +260,7 @@ namespace QLKSThangLong
             // txtSDTNV
             // 
             this.txtSDTNV.Location = new System.Drawing.Point(70, 225);
+            this.txtSDTNV.MaxLength = 10;
             this.txtSDTNV.Name = "txtSDTNV";
             this.txtSDTNV.Size = new System.Drawing.Size(178, 22);
             this.txtSDTNV.TabIndex = 5;
@@ -238,6 +277,7 @@ namespace QLKSThangLong
             // txtTenNV
             // 
             this.txtTenNV.Location = new System.Drawing.Point(70, 74);
+            this.txtTenNV.MaxLength = 35;
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(219, 22);
             this.txtTenNV.TabIndex = 3;
@@ -254,6 +294,7 @@ namespace QLKSThangLong
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(70, 31);
+            this.txtMaNV.MaxLength = 5;
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(70, 22);
             this.txtMaNV.TabIndex = 1;
@@ -276,6 +317,7 @@ namespace QLKSThangLong
             this.btnThemNV.Size = new System.Drawing.Size(94, 47);
             this.btnThemNV.TabIndex = 19;
             this.btnThemNV.Text = "Thêm";
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // btnCapNhatNV
             // 
@@ -286,6 +328,7 @@ namespace QLKSThangLong
             this.btnCapNhatNV.Size = new System.Drawing.Size(116, 48);
             this.btnCapNhatNV.TabIndex = 20;
             this.btnCapNhatNV.Text = " Cập nhật";
+            this.btnCapNhatNV.Click += new System.EventHandler(this.btnCapNhatNV_Click);
             // 
             // btnXoaNV
             // 
@@ -296,6 +339,7 @@ namespace QLKSThangLong
             this.btnXoaNV.Size = new System.Drawing.Size(94, 47);
             this.btnXoaNV.TabIndex = 22;
             this.btnXoaNV.Text = "Xóa";
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
             // 
             // btnResetNV
             // 
@@ -306,6 +350,7 @@ namespace QLKSThangLong
             this.btnResetNV.Size = new System.Drawing.Size(94, 38);
             this.btnResetNV.TabIndex = 21;
             this.btnResetNV.Text = "Reset";
+            this.btnResetNV.Click += new System.EventHandler(this.btnResetNV_Click);
             // 
             // groupBox2
             // 
@@ -323,6 +368,7 @@ namespace QLKSThangLong
             this.txtTimKiemNV.Name = "txtTimKiemNV";
             this.txtTimKiemNV.Size = new System.Drawing.Size(267, 22);
             this.txtTimKiemNV.TabIndex = 8;
+            this.txtTimKiemNV.TextChanged += new System.EventHandler(this.txtTimKiemNV_TextChanged);
             // 
             // btnTroVeNV
             // 
@@ -333,6 +379,7 @@ namespace QLKSThangLong
             this.btnTroVeNV.Size = new System.Drawing.Size(94, 29);
             this.btnTroVeNV.TabIndex = 24;
             this.btnTroVeNV.Text = "Trở về";
+            this.btnTroVeNV.Click += new System.EventHandler(this.btnTroVeNV_Click);
             // 
             // label7
             // 
@@ -341,45 +388,9 @@ namespace QLKSThangLong
             this.label7.ForeColor = System.Drawing.Color.Blue;
             this.label7.Location = new System.Drawing.Point(286, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(380, 39);
+            this.label7.Size = new System.Drawing.Size(367, 38);
             this.label7.TabIndex = 25;
             this.label7.Text = "QUẢN LÝ NHÂN VIÊN";
-            // 
-            // dgvMaNhanVien
-            // 
-            this.dgvMaNhanVien.HeaderText = "Mã nhân viên";
-            this.dgvMaNhanVien.MinimumWidth = 6;
-            this.dgvMaNhanVien.Name = "dgvMaNhanVien";
-            // 
-            // dgvTen
-            // 
-            this.dgvTen.HeaderText = "Tên";
-            this.dgvTen.MinimumWidth = 6;
-            this.dgvTen.Name = "dgvTen";
-            // 
-            // dgvGT
-            // 
-            this.dgvGT.HeaderText = "Giới tính";
-            this.dgvGT.MinimumWidth = 6;
-            this.dgvGT.Name = "dgvGT";
-            // 
-            // dgvBPLV
-            // 
-            this.dgvBPLV.HeaderText = "Bộ Phận Làm Việc";
-            this.dgvBPLV.MinimumWidth = 6;
-            this.dgvBPLV.Name = "dgvBPLV";
-            // 
-            // dgvSDT
-            // 
-            this.dgvSDT.HeaderText = "Số điện thoại";
-            this.dgvSDT.MinimumWidth = 6;
-            this.dgvSDT.Name = "dgvSDT";
-            // 
-            // dgvDiaChi
-            // 
-            this.dgvDiaChi.HeaderText = "Địa chỉ";
-            this.dgvDiaChi.MinimumWidth = 6;
-            this.dgvDiaChi.Name = "dgvDiaChi";
             // 
             // NhanVien
             // 

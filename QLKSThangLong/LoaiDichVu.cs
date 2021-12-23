@@ -20,7 +20,7 @@ namespace QLKSThangLong
 
         private void LoaiDichVu_Load(object sender, EventArgs e)
         {
-            List<DICHVU> listDV = db.DICHVU.ToList();
+            List<DICHVU> listDV = db.DICHVUs.ToList();
             FillDataDGV(listDV);
         }
 

@@ -34,6 +34,10 @@ namespace QLKSThangLong
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHang));
             this.dgvQLKH = new System.Windows.Forms.DataGridView();
+            this.dgvMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,10 +55,6 @@ namespace QLKSThangLong
             this.btnXoaKH = new DevExpress.XtraEditors.SimpleButton();
             this.btnResetKH = new DevExpress.XtraEditors.SimpleButton();
             this.btnCapNhatKH = new DevExpress.XtraEditors.SimpleButton();
-            this.dgvMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLKH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,6 +103,30 @@ namespace QLKSThangLong
             this.dgvQLKH.TabIndex = 0;
             this.dgvQLKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLKH_CellClick);
             // 
+            // dgvMaKH
+            // 
+            this.dgvMaKH.HeaderText = "Mã khách hàng";
+            this.dgvMaKH.MinimumWidth = 6;
+            this.dgvMaKH.Name = "dgvMaKH";
+            // 
+            // dgvTenKH
+            // 
+            this.dgvTenKH.HeaderText = "Tên khách hàng";
+            this.dgvTenKH.MinimumWidth = 6;
+            this.dgvTenKH.Name = "dgvTenKH";
+            // 
+            // dgvCMND
+            // 
+            this.dgvCMND.HeaderText = "Số CMND/CCCD";
+            this.dgvCMND.MinimumWidth = 6;
+            this.dgvCMND.Name = "dgvCMND";
+            // 
+            // dgvSDT
+            // 
+            this.dgvSDT.HeaderText = "Số điện thoại";
+            this.dgvSDT.MinimumWidth = 6;
+            this.dgvSDT.Name = "dgvSDT";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -110,7 +134,7 @@ namespace QLKSThangLong
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(266, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(422, 39);
+            this.label1.Size = new System.Drawing.Size(410, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ KHÁCH HÀNG";
             // 
@@ -126,7 +150,7 @@ namespace QLKSThangLong
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(103, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên khách hàng";
             // 
@@ -135,7 +159,7 @@ namespace QLKSThangLong
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(91, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "CMND/ CCCD";
             // 
@@ -151,7 +175,7 @@ namespace QLKSThangLong
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 17);
+            this.label4.Size = new System.Drawing.Size(85, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Số điện thoại";
             // 
@@ -192,7 +216,7 @@ namespace QLKSThangLong
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(11, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 17);
+            this.label5.Size = new System.Drawing.Size(98, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Mã khách hàng";
             // 
@@ -222,6 +246,7 @@ namespace QLKSThangLong
             this.btnTroVeKH.Size = new System.Drawing.Size(94, 29);
             this.btnTroVeKH.TabIndex = 19;
             this.btnTroVeKH.Text = "Trở về";
+            this.btnTroVeKH.Click += new System.EventHandler(this.btnTroVeKH_Click);
             // 
             // btnThemKH
             // 
@@ -232,6 +257,7 @@ namespace QLKSThangLong
             this.btnThemKH.Size = new System.Drawing.Size(94, 47);
             this.btnThemKH.TabIndex = 18;
             this.btnThemKH.Text = "Thêm";
+            this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
             // btnXoaKH
             // 
@@ -242,6 +268,7 @@ namespace QLKSThangLong
             this.btnXoaKH.Size = new System.Drawing.Size(94, 47);
             this.btnXoaKH.TabIndex = 17;
             this.btnXoaKH.Text = "Xóa";
+            this.btnXoaKH.Click += new System.EventHandler(this.btnXoaKH_Click);
             // 
             // btnResetKH
             // 
@@ -252,7 +279,7 @@ namespace QLKSThangLong
             this.btnResetKH.Size = new System.Drawing.Size(94, 38);
             this.btnResetKH.TabIndex = 16;
             this.btnResetKH.Text = "Reset";
-            this.btnResetKH.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.btnResetKH.Click += new System.EventHandler(this.btnResetKH_Click);
             // 
             // btnCapNhatKH
             // 
@@ -263,30 +290,7 @@ namespace QLKSThangLong
             this.btnCapNhatKH.Size = new System.Drawing.Size(116, 48);
             this.btnCapNhatKH.TabIndex = 15;
             this.btnCapNhatKH.Text = " Cập nhật";
-            // 
-            // dgvMaKH
-            // 
-            this.dgvMaKH.HeaderText = "Mã khách hàng";
-            this.dgvMaKH.MinimumWidth = 6;
-            this.dgvMaKH.Name = "dgvMaKH";
-            // 
-            // dgvTenKH
-            // 
-            this.dgvTenKH.HeaderText = "Tên khách hàng";
-            this.dgvTenKH.MinimumWidth = 6;
-            this.dgvTenKH.Name = "dgvTenKH";
-            // 
-            // dgvCMND
-            // 
-            this.dgvCMND.HeaderText = "Số CMND/CCCD";
-            this.dgvCMND.MinimumWidth = 6;
-            this.dgvCMND.Name = "dgvCMND";
-            // 
-            // dgvSDT
-            // 
-            this.dgvSDT.HeaderText = "Số điện thoại";
-            this.dgvSDT.MinimumWidth = 6;
-            this.dgvSDT.Name = "dgvSDT";
+            this.btnCapNhatKH.Click += new System.EventHandler(this.btnCapNhatKH_Click);
             // 
             // KhachHang
             // 

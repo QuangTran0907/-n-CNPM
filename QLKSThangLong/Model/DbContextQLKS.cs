@@ -12,17 +12,18 @@ namespace QLKSThangLong.Model
         {
         }
 
-        public virtual DbSet<CHITIETPHIEUTHUE> CHITIETPHIEUTHUE { get; set; }
-        public virtual DbSet<DICHVU> DICHVU { get; set; }
-        public virtual DbSet<HOADON> HOADON { get; set; }
-        public virtual DbSet<KHACHHANG> KHACHHANG { get; set; }
-        public virtual DbSet<NHANVIEN> NHANVIEN { get; set; }
-        public virtual DbSet<PHIEUDANGKIDV> PHIEUDANGKIDV { get; set; }
-        public virtual DbSet<PHIEUTHUEPHONG> PHIEUTHUEPHONG { get; set; }
-        public virtual DbSet<PHONG> PHONG { get; set; }
-        public virtual DbSet<SUDUNGVT> SUDUNGVT { get; set; }
-        public virtual DbSet<TAIKHOAN> TAIKHOAN { get; set; }
-        public virtual DbSet<VATTU> VATTU { get; set; }
+        public virtual DbSet<CHITIETPHIEUTHUE> CHITIETPHIEUTHUEs { get; set; }
+        public virtual DbSet<DICHVU> DICHVUs { get; set; }
+        public virtual DbSet<HOADON> HOADONs { get; set; }
+        public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<PHIEUDANGKIDV> PHIEUDANGKIDVs { get; set; }
+        public virtual DbSet<PHIEUTHUEPHONG> PHIEUTHUEPHONGs { get; set; }
+        public virtual DbSet<PHONG> PHONGs { get; set; }
+        public virtual DbSet<SUDUNGVT> SUDUNGVTs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
+        public virtual DbSet<VATTU> VATTUs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -124,7 +125,7 @@ namespace QLKSThangLong.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<PHIEUTHUEPHONG>()
-                .HasMany(e => e.CHITIETPHIEUTHUE)
+                .HasMany(e => e.CHITIETPHIEUTHUEs)
                 .WithRequired(e => e.PHIEUTHUEPHONG)
                 .WillCascadeOnDelete(false);
 
@@ -142,17 +143,17 @@ namespace QLKSThangLong.Model
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<PHONG>()
-                .HasMany(e => e.CHITIETPHIEUTHUE)
+                .HasMany(e => e.CHITIETPHIEUTHUEs)
                 .WithRequired(e => e.PHONG)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PHONG>()
-                .HasMany(e => e.HOADON)
+                .HasMany(e => e.HOADONs)
                 .WithRequired(e => e.PHONG)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PHONG>()
-                .HasMany(e => e.SUDUNGVT)
+                .HasMany(e => e.SUDUNGVTs)
                 .WithRequired(e => e.PHONG)
                 .WillCascadeOnDelete(false);
 
@@ -185,9 +186,14 @@ namespace QLKSThangLong.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<VATTU>()
-                .HasMany(e => e.SUDUNGVT)
+                .HasMany(e => e.SUDUNGVTs)
                 .WithRequired(e => e.VATTU)
                 .WillCascadeOnDelete(false);
+        }
+
+        internal void SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }

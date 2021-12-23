@@ -100,6 +100,7 @@
     <Compile Include="Model\PHIEUTHUEPHONG.cs" />
     <Compile Include="Model\PHONG.cs" />
     <Compile Include="Model\SUDUNGVT.cs" />
+    <Compile Include="Model\sysdiagram.cs" />
     <Compile Include="Model\TAIKHOAN.cs" />
     <Compile Include="Model\VATTU.cs" />
     <Compile Include="NhanVien.cs">
@@ -139,6 +140,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.Config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,9 +151,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thuê.jpg" />

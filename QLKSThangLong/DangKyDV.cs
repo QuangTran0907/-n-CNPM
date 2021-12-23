@@ -26,8 +26,8 @@ namespace QLKSThangLong
 
         private void DangKyDV_Load(object sender, EventArgs e)
         {
-            List<PHIEUDANGKIDV> listDKDV = db.PHIEUDANGKIDV.ToList();
-            List<DICHVU> listDV = db.DICHVU.ToList();
+            List<PHIEUDANGKIDV> listDKDV = db.PHIEUDANGKIDVs.ToList();
+            List<DICHVU> listDV = db.DICHVUs.ToList();
             FillDataDGV(listDKDV);
         }
         private void FillDataDGV(List<PHIEUDANGKIDV> listDKDV)

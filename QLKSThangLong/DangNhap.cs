@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLKSThangLong.Model;
 
 namespace QLKSThangLong
 {
@@ -16,7 +17,37 @@ namespace QLKSThangLong
         {
             InitializeComponent();
         }
+        DbContextQLKS dbcontent = new DbContextQLKS();
+        bool checkUser()
+        {
+            List<TAIKHOAN> tAIKHOANs = dbcontent.TAIKHOANs.ToList();
+            List<TAIKHOAN> login = new List<TAIKHOAN>();
 
+            foreach (var item in tAIKHOANs)
+            {
+                var v = from c in tAIKHOANs
+                        where c.TenTK == txtTaiKhoanDN.Text && c.MatKhau == txtMatKhauDN.Text
+                        select c;
+                login = v.ToList();
+
+
+            }
+            if (login.Count == 0)
+            {
+                MessageBox.Show("Nhập sai tài khoản hoặc mật khẩu");
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("Đăng nhập thành công");
+                Form1 con = new Form1();
+                con.listCon = login.ToList();
+                con.Show();
+                this.Close();
+
+            }
+            return true;
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             
@@ -30,6 +61,25 @@ namespace QLKSThangLong
         private void pictureEdit1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkHienMK_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (checkHienMK.Checked)
+                txtMatKhauDN.PasswordChar = (char)0;
+            else
+                txtMatKhauDN.PasswordChar = '*';
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            checkUser();
         }
     }
 }
