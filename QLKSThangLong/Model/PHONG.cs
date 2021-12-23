@@ -12,10 +12,10 @@ namespace QLKSThangLong.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PHONG()
         {
-            CHITIETPHIEUTHUE = new HashSet<CHITIETPHIEUTHUE>();
-            HOADON = new HashSet<HOADON>();
-            PHIEUDANGKIDV = new HashSet<PHIEUDANGKIDV>();
-            SUDUNGVT = new HashSet<SUDUNGVT>();
+            CHITIETPHIEUTHUEs = new HashSet<CHITIETPHIEUTHUE>();
+            HOADONs = new HashSet<HOADON>();
+            PHIEUDANGKIDVs = new HashSet<PHIEUDANGKIDV>();
+            SUDUNGVTs = new HashSet<SUDUNGVT>();
         }
 
         [Key]
@@ -39,15 +39,15 @@ namespace QLKSThangLong.Model
         public bool? TrangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETPHIEUTHUE> CHITIETPHIEUTHUE { get; set; }
+        public virtual ICollection<CHITIETPHIEUTHUE> CHITIETPHIEUTHUEs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADON { get; set; }
+        public virtual ICollection<HOADON> HOADONs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUDANGKIDV> PHIEUDANGKIDV { get; set; }
+        public virtual ICollection<PHIEUDANGKIDV> PHIEUDANGKIDVs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SUDUNGVT> SUDUNGVT { get; set; }
+        public virtual ICollection<SUDUNGVT> SUDUNGVTs { get; set; }
     }
 }

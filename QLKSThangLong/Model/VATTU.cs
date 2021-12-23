@@ -12,7 +12,7 @@ namespace QLKSThangLong.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public VATTU()
         {
-            SUDUNGVT = new HashSet<SUDUNGVT>();
+            SUDUNGVTs = new HashSet<SUDUNGVT>();
         }
 
         [Key]
@@ -28,6 +28,6 @@ namespace QLKSThangLong.Model
         public short? SoLuong { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SUDUNGVT> SUDUNGVT { get; set; }
+        public virtual ICollection<SUDUNGVT> SUDUNGVTs { get; set; }
     }
 }

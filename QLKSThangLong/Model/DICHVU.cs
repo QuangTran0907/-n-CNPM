@@ -12,7 +12,7 @@ namespace QLKSThangLong.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DICHVU()
         {
-            PHIEUDANGKIDV = new HashSet<PHIEUDANGKIDV>();
+            PHIEUDANGKIDVs = new HashSet<PHIEUDANGKIDV>();
         }
 
         [Key]
@@ -26,6 +26,6 @@ namespace QLKSThangLong.Model
         public decimal? GiaDV { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUDANGKIDV> PHIEUDANGKIDV { get; set; }
+        public virtual ICollection<PHIEUDANGKIDV> PHIEUDANGKIDVs { get; set; }
     }
 }

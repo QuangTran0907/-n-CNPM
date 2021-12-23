@@ -12,7 +12,7 @@ namespace QLKSThangLong.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PHIEUTHUEPHONG()
         {
-            CHITIETPHIEUTHUE = new HashSet<CHITIETPHIEUTHUE>();
+            CHITIETPHIEUTHUEs = new HashSet<CHITIETPHIEUTHUE>();
         }
 
         [Key]
@@ -28,7 +28,7 @@ namespace QLKSThangLong.Model
         public string MaNV { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETPHIEUTHUE> CHITIETPHIEUTHUE { get; set; }
+        public virtual ICollection<CHITIETPHIEUTHUE> CHITIETPHIEUTHUEs { get; set; }
 
         public virtual KHACHHANG KHACHHANG { get; set; }
 

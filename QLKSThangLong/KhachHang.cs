@@ -26,7 +26,7 @@ namespace QLKSThangLong
 
         private void KhachHang_Load(object sender, EventArgs e)
         {
-            List<KHACHHANG> listKH = db.KHACHHANG.ToList();
+            List<KHACHHANG> listKH = db.KHACHHANGs.ToList();
             FillDataDGV(listKH);
         }
         private void FillDataDGV(List<KHACHHANG> listKH)
