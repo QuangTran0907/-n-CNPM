@@ -19,10 +19,7 @@ namespace QLKSThangLong
             InitializeComponent();
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void KhachHang_Load(object sender, EventArgs e)
         {
@@ -62,6 +59,132 @@ namespace QLKSThangLong
 
                 MessageBox.Show("Có lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        private void loadForm()
+        {
+
+            txtMaKH.Clear();
+            txtTenKH.Clear();
+            txtCMND.Clear();
+            txtSDTKH.Clear();
+        }
+        private void loadDGV()
+        {
+            List<KHACHHANG> listKH = db.KHACHHANGs.ToList();
+            FillDataDGV(listKH);
+        }
+        private int checkMaKH(string check)
+        {
+            for (int i = 0; i < dgvQLKH.Rows.Count; i++)
+            {
+                if (dgvQLKH.Rows[i].Cells[0].Value != null)
+                {
+                    if (dgvQLKH.Rows[i].Cells[0].Value.ToString() == check)
+                        return i;
+                }
+            }
+            return -1;
+        }
+        private bool CheckDataInput()
+        {
+            if (txtTenKH.Text == "" || txtCMND.Text == "" || txtSDTKH.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return false;
+
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        private void btnThemKH_Click(object sender, EventArgs e)
+        {
+            if (CheckDataInput() == true)
+            {
+                if (checkMaKH(txtMaKH.Text) == -1)
+                {
+                    KHACHHANG x = new KHACHHANG();
+                    x.MaKH = "KH03";
+                    x.TenKH = txtTenKH.Text;
+                    x.CMND_CCCD = txtCMND.Text;
+                    x.SDT = txtSDTKH.Text;
+                    db.KHACHHANGs.AddOrUpdate(x);
+                    db.SaveChanges();
+
+                    loadForm();
+                    loadDGV();
+
+                    MessageBox.Show("Thêm đối tượng Thành công ", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Không có đối tượng nào trong danh sách ", "Thông báo");
+                }
+            }
+        }
+
+        private void btnCapNhatKH_Click(object sender, EventArgs e)
+        {
+            if (CheckDataInput() == true)
+            {
+                KHACHHANG x = db.KHACHHANGs.Where(p => p.MaKH == txtMaKH.Text).FirstOrDefault();
+                if (x != null)
+                {
+                    x.MaKH = txtMaKH.Text;
+                    x.TenKH = txtTenKH.Text;
+                    x.CMND_CCCD = txtCMND.Text;
+                    x.SDT = txtSDTKH.Text;
+                    db.KHACHHANGs.AddOrUpdate(x);
+                    db.SaveChanges();
+                    loadForm();
+                    loadDGV();
+                    MessageBox.Show("Cập nhât đối tượng thành công ", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Không có đối tượng nào trong danh sách ", "Thông báo");
+
+                }
+            }
+        }
+
+        private void btnXoaKH_Click(object sender, EventArgs e)
+        {
+            if (CheckDataInput() == true)
+            {
+                KHACHHANG x = db.KHACHHANGs.Where(p => p.MaKH == txtMaKH.Text).FirstOrDefault();
+                if (x != null)
+                {
+                    x.MaKH = txtMaKH.Text;
+                    x.TenKH = txtTenKH.Text;
+                    x.CMND_CCCD = txtCMND.Text;
+                    x.SDT = txtSDTKH.Text;
+                    db.KHACHHANGs.Remove(x);
+                    db.SaveChanges();
+
+                    loadForm();
+                    loadDGV();
+                    MessageBox.Show("Xóa đối tượng thành công ", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Không có đối tượng nào trong danh sách ", "Thông báo");
+
+                }
+            }
+        }
+
+        private void btnResetKH_Click(object sender, EventArgs e)
+        {
+            loadDGV();
+        }
+
+        private void btnTroVeKH_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

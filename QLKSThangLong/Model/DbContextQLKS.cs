@@ -190,5 +190,10 @@ namespace QLKSThangLong.Model
                 .WithRequired(e => e.VATTU)
                 .WillCascadeOnDelete(false);
         }
+
+        internal void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
