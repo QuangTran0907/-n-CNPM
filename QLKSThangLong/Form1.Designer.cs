@@ -459,8 +459,8 @@ namespace QLKSThangLong
             // galleryControlClient2
             // 
             this.galleryControlClient2.GalleryControl = this.galleryControl1;
-            this.galleryControlClient2.Location = new System.Drawing.Point(2, 2);
-            this.galleryControlClient2.Size = new System.Drawing.Size(95, 91);
+            this.galleryControlClient2.Location = new System.Drawing.Point(0, 0);
+            this.galleryControlClient2.Size = new System.Drawing.Size(0, 0);
             // 
             // galleryControl2
             // 

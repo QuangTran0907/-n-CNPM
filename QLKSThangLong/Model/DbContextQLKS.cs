@@ -8,7 +8,7 @@ namespace QLKSThangLong.Model
     public partial class DbContextQLKS : DbContext
     {
         public DbContextQLKS()
-            : base("name=DbContextQLKS")
+            : base("name=DbContextQLKS1")
         {
         }
 
@@ -21,7 +21,6 @@ namespace QLKSThangLong.Model
         public virtual DbSet<PHIEUTHUEPHONG> PHIEUTHUEPHONGs { get; set; }
         public virtual DbSet<PHONG> PHONGs { get; set; }
         public virtual DbSet<SUDUNGVT> SUDUNGVTs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<VATTU> VATTUs { get; set; }
 
@@ -189,11 +188,6 @@ namespace QLKSThangLong.Model
                 .HasMany(e => e.SUDUNGVTs)
                 .WithRequired(e => e.VATTU)
                 .WillCascadeOnDelete(false);
-        }
-
-        internal void SaveChanges()
-        {
-            throw new NotImplementedException();
         }
     }
 }

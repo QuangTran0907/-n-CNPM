@@ -28,15 +28,20 @@ namespace QLKSThangLong
         private void FillDataDGV(List<NHANVIEN> listNV)
         {
             dgvQLNV.Rows.Clear();
+            
             foreach (var item in listNV)
             {
-                int newRow = dgvQLNV.Rows.Add();
-                dgvQLNV.Rows[newRow].Cells[0].Value = item.MaNV;
-                dgvQLNV.Rows[newRow].Cells[1].Value = item.TenNV;
-                dgvQLNV.Rows[newRow].Cells[2].Value = item.GioiTinh;
-                dgvQLNV.Rows[newRow].Cells[3].Value = item.BoPhanLamViec;
-                dgvQLNV.Rows[newRow].Cells[4].Value = item.SDT;
-                dgvQLNV.Rows[newRow].Cells[5].Value = item.DiaChi;
+                if (item.TrangThai == true)
+                {
+                    int newRow = dgvQLNV.Rows.Add();
+                    dgvQLNV.Rows[newRow].Cells[0].Value = item.MaNV;
+                    dgvQLNV.Rows[newRow].Cells[1].Value = item.TenNV;
+                    dgvQLNV.Rows[newRow].Cells[2].Value = item.GioiTinh;
+                    dgvQLNV.Rows[newRow].Cells[3].Value = item.BoPhanLamViec;
+                    dgvQLNV.Rows[newRow].Cells[4].Value = item.SDT;
+                    dgvQLNV.Rows[newRow].Cells[5].Value = item.DiaChi;
+                }
+                
             }
         }
 
@@ -204,8 +209,8 @@ namespace QLKSThangLong
                     x.GioiTinh = "Nữ";
                 else
                     x.GioiTinh = "Khác";
-                x.TrangThai = true;
-                db.NHANVIENs.Remove(x);
+                x.TrangThai = false;
+                
                 db.SaveChanges();
 
                 loadForm();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace QLKSThangLong
     public partial class KhachHang : Form
     {
         DbContextQLKS db = new DbContextQLKS();
+        
         public KhachHang()
         {
             InitializeComponent();
@@ -73,17 +75,18 @@ namespace QLKSThangLong
             List<KHACHHANG> listKH = db.KHACHHANGs.ToList();
             FillDataDGV(listKH);
         }
-        private int checkMaKH(string check)
+        private bool checkMaKH(string check)
         {
+           
             for (int i = 0; i < dgvQLKH.Rows.Count; i++)
             {
                 if (dgvQLKH.Rows[i].Cells[0].Value != null)
                 {
                     if (dgvQLKH.Rows[i].Cells[0].Value.ToString() == check)
-                        return i;
+                        return true;
                 }
             }
-            return -1;
+            return false;
         }
         private bool CheckDataInput()
         {
@@ -99,15 +102,27 @@ namespace QLKSThangLong
             }
 
         }
-
+        private string Auto_ID()
+        {
+            string makh=""  ;
+            for (int i = 0; i < dgvQLKH.Rows.Count; i++)
+            {
+                if (dgvQLKH.Rows.Count < 10)
+                    makh = $"KH0{i}";
+                    
+                else
+                    makh = $"KH{i}";
+            }
+            return makh;
+        }
         private void btnThemKH_Click(object sender, EventArgs e)
         {
             if (CheckDataInput() == true)
             {
-                if (checkMaKH(txtMaKH.Text) == -1)
+                if (checkMaKH(txtMaKH.Text) == false)
                 {
                     KHACHHANG x = new KHACHHANG();
-                    x.MaKH = "KH03";
+                    x.MaKH = Auto_ID();
                     x.TenKH = txtTenKH.Text;
                     x.CMND_CCCD = txtCMND.Text;
                     x.SDT = txtSDTKH.Text;
@@ -117,11 +132,11 @@ namespace QLKSThangLong
                     loadForm();
                     loadDGV();
 
-                    MessageBox.Show("Thêm đối tượng Thành công ", "Thông báo");
+                    MessageBox.Show("Thêm khách hàng thành công ", "Thông báo");
                 }
                 else
                 {
-                    MessageBox.Show("Không có đối tượng nào trong danh sách ", "Thông báo");
+                    MessageBox.Show("Khách hàng đã tồn tại ", "Thông báo");
                 }
             }
         }
@@ -180,11 +195,21 @@ namespace QLKSThangLong
         private void btnResetKH_Click(object sender, EventArgs e)
         {
             loadDGV();
+            loadForm();
         }
 
         private void btnTroVeKH_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtTimKH_TextChanged(object sender, EventArgs e)
+        {
+            var result = from c in db.KHACHHANGs
+                         where c.TenKH.Contains(txtTimKH.Text)
+                         select c;
+
+            FillDataDGV(result.ToList());
         }
     }
 }

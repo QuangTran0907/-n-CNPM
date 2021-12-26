@@ -30,9 +30,9 @@ namespace QLKSThangLong
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiDichVu));
             this.dgvQLDV = new System.Windows.Forms.DataGridView();
             this.dgvMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +46,12 @@ namespace QLKSThangLong
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThemDV = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXoaDV = new DevExpress.XtraEditors.SimpleButton();
             this.btnResetDV = new DevExpress.XtraEditors.SimpleButton();
             this.btnCapNhatDV = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.btnTroVeDV = new DevExpress.XtraEditors.SimpleButton();
             this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
+            this.btnXoaDV = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLDV)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
@@ -61,37 +61,37 @@ namespace QLKSThangLong
             // 
             this.dgvQLDV.AllowUserToAddRows = false;
             this.dgvQLDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvQLDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvMaDV,
             this.dgvTenDV,
             this.dgvGiaDV});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvQLDV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLDV.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvQLDV.Location = new System.Drawing.Point(364, 67);
             this.dgvQLDV.Name = "dgvQLDV";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLDV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLDV.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvQLDV.RowHeadersVisible = false;
             this.dgvQLDV.RowHeadersWidth = 51;
             this.dgvQLDV.RowTemplate.Height = 24;
@@ -123,7 +123,7 @@ namespace QLKSThangLong
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(39, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Dịch vụ";
             // 
@@ -146,7 +146,7 @@ namespace QLKSThangLong
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(81, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 17);
+            this.label2.Size = new System.Drawing.Size(28, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Giá";
             // 
@@ -162,7 +162,7 @@ namespace QLKSThangLong
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(33, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên Dịch vụ";
             // 
@@ -189,16 +189,7 @@ namespace QLKSThangLong
             this.btnThemDV.Size = new System.Drawing.Size(94, 47);
             this.btnThemDV.TabIndex = 22;
             this.btnThemDV.Text = "Thêm";
-            // 
-            // btnXoaDV
-            // 
-            this.btnXoaDV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDV.ImageOptions.Image")));
-            this.btnXoaDV.Location = new System.Drawing.Point(65, 264);
-            this.btnXoaDV.Name = "btnXoaDV";
-            this.btnXoaDV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnXoaDV.Size = new System.Drawing.Size(94, 47);
-            this.btnXoaDV.TabIndex = 21;
-            this.btnXoaDV.Text = "Xóa";
+            this.btnThemDV.Click += new System.EventHandler(this.btnThemDV_Click);
             // 
             // btnResetDV
             // 
@@ -209,6 +200,7 @@ namespace QLKSThangLong
             this.btnResetDV.Size = new System.Drawing.Size(94, 38);
             this.btnResetDV.TabIndex = 20;
             this.btnResetDV.Text = "Reset";
+            this.btnResetDV.Click += new System.EventHandler(this.btnResetDV_Click);
             // 
             // btnCapNhatDV
             // 
@@ -219,6 +211,7 @@ namespace QLKSThangLong
             this.btnCapNhatDV.Size = new System.Drawing.Size(116, 48);
             this.btnCapNhatDV.TabIndex = 19;
             this.btnCapNhatDV.Text = " Cập nhật";
+            this.btnCapNhatDV.Click += new System.EventHandler(this.btnCapNhatDV_Click);
             // 
             // label4
             // 
@@ -240,11 +233,23 @@ namespace QLKSThangLong
             this.btnTroVeDV.Size = new System.Drawing.Size(94, 29);
             this.btnTroVeDV.TabIndex = 24;
             this.btnTroVeDV.Text = "Trở về";
+            this.btnTroVeDV.Click += new System.EventHandler(this.btnTroVeDV_Click);
             // 
             // galleryDropDown1
             // 
             this.galleryDropDown1.Manager = null;
             this.galleryDropDown1.Name = "galleryDropDown1";
+            // 
+            // btnXoaDV
+            // 
+            this.btnXoaDV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDV.ImageOptions.Image")));
+            this.btnXoaDV.Location = new System.Drawing.Point(65, 264);
+            this.btnXoaDV.Name = "btnXoaDV";
+            this.btnXoaDV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnXoaDV.Size = new System.Drawing.Size(94, 47);
+            this.btnXoaDV.TabIndex = 21;
+            this.btnXoaDV.Text = "Xóa";
+            this.btnXoaDV.Click += new System.EventHandler(this.btnXoaDV_Click);
             // 
             // LoaiDichVu
             // 
@@ -282,7 +287,6 @@ namespace QLKSThangLong
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.SimpleButton btnThemDV;
-        private DevExpress.XtraEditors.SimpleButton btnXoaDV;
         private DevExpress.XtraEditors.SimpleButton btnResetDV;
         private DevExpress.XtraEditors.SimpleButton btnCapNhatDV;
         private System.Windows.Forms.Label label4;
@@ -291,5 +295,6 @@ namespace QLKSThangLong
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvMaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvGiaDV;
+        private DevExpress.XtraEditors.SimpleButton btnXoaDV;
     }
 }
