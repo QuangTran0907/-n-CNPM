@@ -218,7 +218,7 @@ namespace QLKSThangLong
 
         private void btnTroVeKH_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void txtTimKH_TextChanged(object sender, EventArgs e)

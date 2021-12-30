@@ -82,17 +82,29 @@ namespace QLKSThangLong
                     rbdanhmuc.Visible = true;
                     rbhethong.Visible = true;
                     rbtacvu.Visible = true; 
-                    rbxuatbc.Visible = true;    
+                    rbxuatbc.Visible = true;
+                    txtquyen.Text = "Admin";
                 }
                 else if(item.Quyen == 2)
                 {
+                    rbdanhmuc.Visible = true;
+                    rbxuatbc.Visible = true;
+                    rbhethong.Visible = true;
+                    txtquyen.Text = "Quản lý";
+
+                }
+                else if(item.Quyen == 3)
+                {
+                    galleryControl2.Visible = true;
                     rbtacvu.Visible = true;
-                    
+                    txtquyen.Text = "Lễ tân";
                 }
                 else
                 {
-                   
                     rbdanhmuc.Visible = true;
+                    barloaidv.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barphong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    txtquyen.Text = "Thủ kho";
                 }
             }
         }
@@ -213,6 +225,21 @@ namespace QLKSThangLong
         private void galleryControl2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+            DangNhap dn = new DangNhap();
+            dn.ShowDialog();
+           
+        }
+
+        private void barloaidv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+            LoaiDichVu x = new LoaiDichVu();
+            x.ShowDialog();
         }
     }
 }

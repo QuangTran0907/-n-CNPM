@@ -50,8 +50,8 @@ namespace QLKSThangLong
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barloaidv = new DevExpress.XtraBars.BarButtonItem();
+            this.barphong = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
@@ -96,6 +96,7 @@ namespace QLKSThangLong
             this.galleryControl2 = new DevExpress.XtraBars.Ribbon.GalleryControl();
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.ppMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.txtquyen = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).BeginInit();
             this.galleryControl1.SuspendLayout();
@@ -128,8 +129,8 @@ namespace QLKSThangLong
             this.barButtonItem14,
             this.barButtonItem15,
             this.barButtonItem16,
-            this.barButtonItem17,
-            this.barButtonItem18,
+            this.barloaidv,
+            this.barphong,
             this.barButtonItem19,
             this.barButtonItem20,
             this.barButtonItem21,
@@ -298,19 +299,20 @@ namespace QLKSThangLong
             this.barButtonItem16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem16.ImageOptions.SvgImage")));
             this.barButtonItem16.Name = "barButtonItem16";
             // 
-            // barButtonItem17
+            // barloaidv
             // 
-            this.barButtonItem17.Caption = "Loại dịch vụ";
-            this.barButtonItem17.Id = 19;
-            this.barButtonItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem17.ImageOptions.SvgImage")));
-            this.barButtonItem17.Name = "barButtonItem17";
+            this.barloaidv.Caption = "Loại dịch vụ";
+            this.barloaidv.Id = 19;
+            this.barloaidv.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem17.ImageOptions.SvgImage")));
+            this.barloaidv.Name = "barloaidv";
+            this.barloaidv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barloaidv_ItemClick);
             // 
-            // barButtonItem18
+            // barphong
             // 
-            this.barButtonItem18.Caption = "Phòng";
-            this.barButtonItem18.Id = 20;
-            this.barButtonItem18.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem18.ImageOptions.SvgImage")));
-            this.barButtonItem18.Name = "barButtonItem18";
+            this.barphong.Caption = "Phòng";
+            this.barphong.Id = 20;
+            this.barphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem18.ImageOptions.SvgImage")));
+            this.barphong.Name = "barphong";
             // 
             // barButtonItem19
             // 
@@ -382,6 +384,7 @@ namespace QLKSThangLong
             this.barButtonItem29.Id = 31;
             this.barButtonItem29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.Image")));
             this.barButtonItem29.Name = "barButtonItem29";
+            this.barButtonItem29.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem29_ItemClick);
             // 
             // barButtonItem30
             // 
@@ -516,7 +519,7 @@ namespace QLKSThangLong
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barloaidv);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPageGroup9
@@ -526,7 +529,7 @@ namespace QLKSThangLong
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem18);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barphong);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
             // rbxuatbc
@@ -589,6 +592,7 @@ namespace QLKSThangLong
             this.galleryControl2.Size = new System.Drawing.Size(1225, 380);
             this.galleryControl2.TabIndex = 3;
             this.galleryControl2.Text = "galleryControl2";
+            this.galleryControl2.Visible = false;
             this.galleryControl2.Click += new System.EventHandler(this.galleryControl2_Click);
             // 
             // galleryControlClient1
@@ -609,12 +613,23 @@ namespace QLKSThangLong
             this.ppMenu1.CloseUp += new System.EventHandler(this.ppMenu1_CloseUp);
             this.ppMenu1.Popup += new System.EventHandler(this.ppMenu1_Popup);
             // 
+            // txtquyen
+            // 
+            this.txtquyen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtquyen.Enabled = false;
+            this.txtquyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtquyen.Location = new System.Drawing.Point(1147, 12);
+            this.txtquyen.Name = "txtquyen";
+            this.txtquyen.Size = new System.Drawing.Size(78, 24);
+            this.txtquyen.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1225, 605);
+            this.Controls.Add(this.txtquyen);
             this.Controls.Add(this.galleryControl2);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Form1";
@@ -664,8 +679,8 @@ namespace QLKSThangLong
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarButtonItem barloaidv;
+        private DevExpress.XtraBars.BarButtonItem barphong;
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
@@ -698,6 +713,7 @@ namespace QLKSThangLong
         private DevExpress.XtraBars.BarButtonItem barThongtinphong;
         private DevExpress.XtraBars.BarButtonItem barThemvattu;
         private DevExpress.XtraBars.BarButtonItem barThuephong;
+        private System.Windows.Forms.TextBox txtquyen;
     }
 }
 

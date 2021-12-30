@@ -193,7 +193,7 @@ namespace QLKSThangLong
 
         private void btnTroVeDKDV_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
     }
 }

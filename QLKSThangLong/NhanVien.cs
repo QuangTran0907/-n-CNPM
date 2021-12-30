@@ -231,7 +231,7 @@ namespace QLKSThangLong
 
         private void btnTroVeNV_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void txtTimKiemNV_TextChanged(object sender, EventArgs e)
