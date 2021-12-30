@@ -39,12 +39,11 @@ namespace QLKSThangLong
             }
             else
             {
-                MessageBox.Show("Đăng nhập thành công");
+               
                 Form1 con = new Form1();
                 con.listCon = login.ToList();
                 con.Show();
-                this.Close();
-
+                this.Hide();
             }
             return true;
         }

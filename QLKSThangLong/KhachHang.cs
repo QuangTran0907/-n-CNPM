@@ -88,13 +88,31 @@ namespace QLKSThangLong
             }
             return false;
         }
+        private bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         private bool CheckDataInput()
         {
             if (txtTenKH.Text == "" || txtCMND.Text == "" || txtSDTKH.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return false;
-
+            }
+            else if (IsNumber(txtCMND.Text) != true)
+            {
+                MessageBox.Show("Dữ liệu không phải là số!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (IsNumber(txtSDTKH.Text) != true)
+            {
+                MessageBox.Show("Dữ liệu không phải là số!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return false;
             }
             else
             {

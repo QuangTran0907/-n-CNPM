@@ -20,6 +20,7 @@ namespace QLKSThangLong
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -27,12 +28,14 @@ namespace QLKSThangLong
 
         }   
         DbContextQLKS dbcontext = new DbContextQLKS();
+        string ma = "";
         List<PHONG> PH = new List<PHONG>();
         Image im1 = Image.FromFile("D:\\01.png");
         Image im2 = Image.FromFile("D:\\02.jpg");
         public List<TAIKHOAN> listCon { get; set; }
         private void Form1_Load(object sender, EventArgs e)
         {
+            CheckQuyen();
             List<PHONG> pHONGs = dbcontext.PHONGs.ToList();
             galleryControl2.Gallery.ItemImageLayout = ImageLayoutMode.ZoomInside;
             galleryControl2.Gallery.ImageSize = new Size(80, 80);
@@ -66,21 +69,58 @@ namespace QLKSThangLong
                     
                 }
                 galleryControl2.Gallery.Groups.Add(group);
+            
+            
         }
-        
+      
+        private void CheckQuyen()
+        {
+            foreach (var item in listCon)
+            {
+                if(item.Quyen == 1)
+                {
+                    rbdanhmuc.Visible = true;
+                    rbhethong.Visible = true;
+                    rbtacvu.Visible = true; 
+                    rbxuatbc.Visible = true;    
+                }
+                else if(item.Quyen == 2)
+                {
+                    rbtacvu.Visible = true;
+                    
+                }
+                else
+                {
+                   
+                    rbdanhmuc.Visible = true;
+                }
+            }
+        }
         private void Gallery_ItemClick(object sender, GalleryItemEventArgs e)
         {  
-                var gc_item = new GalleryItem();
+            var gc_item = new GalleryItem();
             string id = e.Item.Value.ToString();
+            ma = id;
             PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == id).FirstOrDefault();
             if (x.TrangThai == true)
-                x.TrangThai = false;
-            else
-                x.TrangThai = true;
+            {
+                barDichvu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barThanhtoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barThuephong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-            dbcontext.PHONGs.AddOrUpdate(x);
-            dbcontext.SaveChanges();
+            }    
+            else
+            {
+                barThuephong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barDichvu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barThanhtoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                
+            }    
+               
+
+            
             if (x.TrangThai == true)
+
                 gc_item.ImageOptions.Image = im1;
             else
                 gc_item.ImageOptions.Image = im2;
@@ -91,10 +131,6 @@ namespace QLKSThangLong
             ppMenu1.ShowPopup(Control.MousePosition);
         }
 
-
-      
-      
-       
         public static DataTable ListToDataTable(List<PHONG> phongg)
         {
             DataTable dataTable = new DataTable(typeof(PHONG).Name);
@@ -141,6 +177,42 @@ namespace QLKSThangLong
         private void ppMenu1_CloseUp(object sender, EventArgs e)
         {
             item = null;
+        }
+
+        private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem33_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barThuephong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var gc_item = new GalleryItem();
+           
+            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
+           
+            x.TrangThai = true;
+            dbcontext.PHONGs.AddOrUpdate(x);
+            dbcontext.SaveChanges();
+        }
+
+        private void barThanhtoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
+            var gc_item = new GalleryItem();
+            x.TrangThai = false;
+            dbcontext.PHONGs.AddOrUpdate(x);
+            dbcontext.SaveChanges(); 
+
+        }
+
+        private void galleryControl2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

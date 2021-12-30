@@ -70,6 +70,15 @@ namespace QLKSThangLong
             }
             return false;
         }
+        private bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         private bool CheckDataInput()
         {
             if (txtMaDV.Text == "" || txtTenDV.Text == "" || txtGiaDV.Text == "")
@@ -77,6 +86,11 @@ namespace QLKSThangLong
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return false;
 
+            }
+            else if (IsNumber(txtGiaDV.Text) != true)
+            {
+                MessageBox.Show("Dữ liệu không phải là số!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return false;
             }
             else
             {

@@ -53,7 +53,7 @@ namespace QLKSThangLong
                 dgvDKDV.Rows[newRow].Cells[1].Value = item.SoPhong;
                 dgvDKDV.Rows[newRow].Cells[2].Value = item.DICHVU.TenDV;
                 dgvDKDV.Rows[newRow].Cells[3].Value = item.SoLuong;
-                dgvDKDV.Rows[newRow].Cells[4].Value = item.NgaySuDung;
+                dgvDKDV.Rows[newRow].Cells[4].Value = item.NgaySuDung.Value.ToString("dd/MM/yyyy");
                 dgvDKDV.Rows[newRow].Cells[5].Value = item.Tongtien;
 
             }
