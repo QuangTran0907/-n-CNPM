@@ -162,7 +162,6 @@ namespace QLKSThangLong
             this.rbxuatbc,
             this.rbtrogiup});
             this.ribbonControl1.Size = new System.Drawing.Size(1225, 183);
-            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barButtonItem1
             // 
@@ -171,7 +170,6 @@ namespace QLKSThangLong
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -239,7 +237,6 @@ namespace QLKSThangLong
             this.barButtonItem10.Caption = "Khách hàng";
             this.barButtonItem10.Id = 10;
             this.barButtonItem10.Name = "barButtonItem10";
-            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
             // 
             // ribbonGalleryBarItem1
             // 
@@ -255,6 +252,7 @@ namespace QLKSThangLong
             // barButtonItem11
             // 
             this.barButtonItem11.Caption = "Phiếu thuê";
+            this.barButtonItem11.GroupIndex = 3;
             this.barButtonItem11.Id = 13;
             this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
             this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
@@ -271,6 +269,7 @@ namespace QLKSThangLong
             // barButtonItem13
             // 
             this.barButtonItem13.Caption = "Khách hàng";
+            this.barButtonItem13.GroupIndex = 4;
             this.barButtonItem13.Id = 15;
             this.barButtonItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
             this.barButtonItem13.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
@@ -279,14 +278,17 @@ namespace QLKSThangLong
             // barButtonItem14
             // 
             this.barButtonItem14.Caption = "Phòng";
+            this.barButtonItem14.GroupIndex = 5;
             this.barButtonItem14.Id = 16;
             this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
             this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
             this.barButtonItem14.Name = "barButtonItem14";
+            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
             // barButtonItem15
             // 
             this.barButtonItem15.Caption = "Hóa đơn";
+            this.barButtonItem15.GroupIndex = 7;
             this.barButtonItem15.Id = 17;
             this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
             this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
@@ -295,6 +297,7 @@ namespace QLKSThangLong
             // barButtonItem16
             // 
             this.barButtonItem16.Caption = "Vật tư";
+            this.barButtonItem16.GroupIndex = 9;
             this.barButtonItem16.Id = 18;
             this.barButtonItem16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem16.ImageOptions.SvgImage")));
             this.barButtonItem16.Name = "barButtonItem16";
@@ -302,21 +305,24 @@ namespace QLKSThangLong
             // barloaidv
             // 
             this.barloaidv.Caption = "Loại dịch vụ";
+            this.barloaidv.GroupIndex = 8;
             this.barloaidv.Id = 19;
-            this.barloaidv.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem17.ImageOptions.SvgImage")));
+            this.barloaidv.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barloaidv.ImageOptions.SvgImage")));
             this.barloaidv.Name = "barloaidv";
             this.barloaidv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barloaidv_ItemClick);
             // 
             // barphong
             // 
             this.barphong.Caption = "Phòng";
+            this.barphong.GroupIndex = 10;
             this.barphong.Id = 20;
-            this.barphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem18.ImageOptions.SvgImage")));
+            this.barphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barphong.ImageOptions.SvgImage")));
             this.barphong.Name = "barphong";
             // 
             // barButtonItem19
             // 
             this.barButtonItem19.Caption = "Dịch vụ";
+            this.barButtonItem19.GroupIndex = 6;
             this.barButtonItem19.Id = 21;
             this.barButtonItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem19.ImageOptions.SvgImage")));
             this.barButtonItem19.Name = "barButtonItem19";
@@ -389,6 +395,7 @@ namespace QLKSThangLong
             // barButtonItem30
             // 
             this.barButtonItem30.Caption = "Thêm nhân viên";
+            this.barButtonItem30.GroupIndex = 1;
             this.barButtonItem30.Id = 32;
             this.barButtonItem30.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem30.ImageOptions.SvgImage")));
             this.barButtonItem30.Name = "barButtonItem30";
@@ -396,14 +403,15 @@ namespace QLKSThangLong
             // barButtonItem31
             // 
             this.barButtonItem31.Caption = "Quản lý tài khoản";
+            this.barButtonItem31.GroupIndex = 2;
             this.barButtonItem31.Id = 33;
             this.barButtonItem31.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem31.ImageOptions.SvgImage")));
             this.barButtonItem31.Name = "barButtonItem31";
-            this.barButtonItem31.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem31_ItemClick);
             // 
             // barButtonItem32
             // 
             this.barButtonItem32.Caption = "Báo cáo tháng";
+            this.barButtonItem32.GroupIndex = 11;
             this.barButtonItem32.Id = 34;
             this.barButtonItem32.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem32.ImageOptions.SvgImage")));
             this.barButtonItem32.Name = "barButtonItem32";
@@ -411,14 +419,15 @@ namespace QLKSThangLong
             // barButtonItem33
             // 
             this.barButtonItem33.Caption = "Báo cáo thời gian";
+            this.barButtonItem33.GroupIndex = 12;
             this.barButtonItem33.Id = 35;
             this.barButtonItem33.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem33.ImageOptions.SvgImage")));
             this.barButtonItem33.Name = "barButtonItem33";
-            this.barButtonItem33.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem33_ItemClick);
             // 
             // barButtonItem34
             // 
             this.barButtonItem34.Caption = "Thông tin";
+            this.barButtonItem34.GroupIndex = 13;
             this.barButtonItem34.Id = 36;
             this.barButtonItem34.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem34.ImageOptions.SvgImage")));
             this.barButtonItem34.Name = "barButtonItem34";
@@ -426,6 +435,7 @@ namespace QLKSThangLong
             // barButtonItem35
             // 
             this.barButtonItem35.Caption = "Liên hệ";
+            this.barButtonItem35.GroupIndex = 14;
             this.barButtonItem35.Id = 37;
             this.barButtonItem35.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem35.ImageOptions.SvgImage")));
             this.barButtonItem35.Name = "barButtonItem35";
@@ -586,14 +596,15 @@ namespace QLKSThangLong
             // 
             // galleryControl2
             // 
+            this.galleryControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.galleryControl2.Controls.Add(this.galleryControlClient1);
             this.galleryControl2.Location = new System.Drawing.Point(0, 189);
             this.galleryControl2.Name = "galleryControl2";
             this.galleryControl2.Size = new System.Drawing.Size(1225, 380);
             this.galleryControl2.TabIndex = 3;
             this.galleryControl2.Text = "galleryControl2";
-            this.galleryControl2.Visible = false;
-            this.galleryControl2.Click += new System.EventHandler(this.galleryControl2_Click);
             // 
             // galleryControlClient1
             // 
@@ -610,8 +621,6 @@ namespace QLKSThangLong
             this.ppMenu1.ItemLinks.Add(this.barThanhtoan);
             this.ppMenu1.Name = "ppMenu1";
             this.ppMenu1.Ribbon = this.ribbonControl1;
-            this.ppMenu1.CloseUp += new System.EventHandler(this.ppMenu1_CloseUp);
-            this.ppMenu1.Popup += new System.EventHandler(this.ppMenu1_Popup);
             // 
             // txtquyen
             // 

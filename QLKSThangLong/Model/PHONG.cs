@@ -22,7 +22,7 @@ namespace QLKSThangLong.Model
         [StringLength(5)]
         public string SoPhong { get; set; }
 
-        [StringLength(10)]
+        [StringLength(30)]
         public string LoaiPhong { get; set; }
 
         [StringLength(30)]

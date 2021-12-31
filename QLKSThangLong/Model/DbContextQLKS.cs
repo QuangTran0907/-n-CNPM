@@ -8,7 +8,7 @@ namespace QLKSThangLong.Model
     public partial class DbContextQLKS : DbContext
     {
         public DbContextQLKS()
-            : base("name=DbContextQLKS1")
+            : base("name=DbContextQLKS")
         {
         }
 

@@ -32,45 +32,54 @@ namespace QLKSThangLong
         List<PHONG> PH = new List<PHONG>();
         Image im1 = Image.FromFile("D:\\01.png");
         Image im2 = Image.FromFile("D:\\02.jpg");
+        GalleryItemEventArgs s;
+        GalleryItem gc_item = new GalleryItem();
+
         public List<TAIKHOAN> listCon { get; set; }
         private void Form1_Load(object sender, EventArgs e)
         {
             CheckQuyen();
+
             List<PHONG> pHONGs = dbcontext.PHONGs.ToList();
+
             galleryControl2.Gallery.ItemImageLayout = ImageLayoutMode.ZoomInside;
             galleryControl2.Gallery.ImageSize = new Size(80, 80);
             galleryControl2.Gallery.ShowItemText = true;
             galleryControl2.Gallery.ShowGroupCaption = true;
+
             var ds = from c in pHONGs
                      orderby c.SoPhong
                      select c;
             PH = ds.ToList();
+
             DataTable x = new DataTable();
             x = ListToDataTable(PH);
+
             GalleryItemGroup group = new GalleryItemGroup();
             galleryControl2.Gallery.Groups.Add(group);
             group.Items.Clear();
             group.Caption = "Tất cả các phòng";
             group.CaptionAlignment = GalleryItemGroupCaptionAlignment.Center;
-                foreach (DataRow item in x.Rows)
-                {
-                        var gc_item = new GalleryItem();
-                        gc_item.AppearanceCaption.Normal.Font = new Font("Tahoma", 12, FontStyle.Bold);
-                        gc_item.AppearanceCaption.Hovered.Font = new Font("Tahoma", 12, FontStyle.Bold);
-                        gc_item.AppearanceCaption.Pressed.Font = new Font("Tahoma", 12, FontStyle.Bold);
-                        if (Convert.ToBoolean(Convert.ToInt16(item["TrangThai"])))
-                            gc_item.ImageOptions.Image = im1;
-                        else
-                            gc_item.ImageOptions.Image = im2;
 
-                        gc_item.Caption = item["SoPhong"].ToString();
-                        gc_item.Value = item["SoPhong"].ToString();
-                        group.Items.Add(gc_item);
-                    
-                }
-                galleryControl2.Gallery.Groups.Add(group);
-            
-            
+            foreach (DataRow item in x.Rows)
+            {
+                var gc_item = new GalleryItem();
+                gc_item.AppearanceCaption.Normal.Font = new Font("Tahoma", 12, FontStyle.Bold);
+                gc_item.AppearanceCaption.Hovered.Font = new Font("Tahoma", 12, FontStyle.Bold);
+                gc_item.AppearanceCaption.Pressed.Font = new Font("Tahoma", 12, FontStyle.Bold);
+                if (Convert.ToBoolean(Convert.ToInt16(item["TrangThai"])))
+                    gc_item.ImageOptions.Image = im1;
+                else
+                    gc_item.ImageOptions.Image = im2;
+
+                gc_item.Caption = item["SoPhong"].ToString();
+                gc_item.Value = item["SoPhong"].ToString();
+                group.Items.Add(gc_item);
+
+            }
+            galleryControl2.Gallery.Groups.Add(group);
+
+
         }
       
         private void CheckQuyen()
@@ -84,6 +93,7 @@ namespace QLKSThangLong
                     rbtacvu.Visible = true; 
                     rbxuatbc.Visible = true;
                     txtquyen.Text = "Admin";
+                    rbhethong.
                 }
                 else if(item.Quyen == 2)
                 {
@@ -109,8 +119,7 @@ namespace QLKSThangLong
             }
         }
         private void Gallery_ItemClick(object sender, GalleryItemEventArgs e)
-        {  
-            var gc_item = new GalleryItem();
+        {
             string id = e.Item.Value.ToString();
             ma = id;
             PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == id).FirstOrDefault();
@@ -119,20 +128,14 @@ namespace QLKSThangLong
                 barDichvu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barThanhtoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barThuephong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-
             }    
             else
             {
                 barThuephong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barDichvu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                barThanhtoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                
-            }    
-               
-
-            
+                barThanhtoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;              
+            }         
             if (x.TrangThai == true)
-
                 gc_item.ImageOptions.Image = im1;
             else
                 gc_item.ImageOptions.Image = im2;
@@ -140,9 +143,33 @@ namespace QLKSThangLong
             gc_item.Caption = e.Item.Caption;
             gc_item.Value = e.Item.Value;
             e.Item.Assign(gc_item);
+            s = e;
             ppMenu1.ShowPopup(Control.MousePosition);
         }
+        private void barThuephong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
+            x.TrangThai = true;
+            gc_item.ImageOptions.Image = im1;
+            gc_item.Caption = s.Item.Caption;
+            gc_item.Value = s.Item.Value;
+            s.Item.Assign(gc_item);
+            dbcontext.PHONGs.AddOrUpdate(x);
+            dbcontext.SaveChanges();
+        }
 
+        private void barThanhtoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
+            x.TrangThai = false;
+            gc_item.ImageOptions.Image = im2;
+            gc_item.Caption = s.Item.Caption;
+            gc_item.Value = s.Item.Value;
+            s.Item.Assign(gc_item);
+            dbcontext.PHONGs.AddOrUpdate(x);
+            dbcontext.SaveChanges();
+
+        }
         public static DataTable ListToDataTable(List<PHONG> phongg)
         {
             DataTable dataTable = new DataTable(typeof(PHONG).Name);
@@ -162,71 +189,6 @@ namespace QLKSThangLong
             }
             return dataTable;
         }
-      
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-        GalleryItem item = null;
-        private void ppMenu1_Popup(object sender, EventArgs e)
-        {
-            Point point = galleryControl2.PointToClient(Control.MousePosition);
-            RibbonHitInfo hitInfo = galleryControl2.CalcHitInfo(point);
-            if (hitInfo.InGalleryItem || hitInfo.HitTest == RibbonHitTest.GalleryImage)
-                item = hitInfo.GalleryItem;
-        }
-
-        private void ppMenu1_CloseUp(object sender, EventArgs e)
-        {
-            item = null;
-        }
-
-        private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void barButtonItem33_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void barThuephong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            var gc_item = new GalleryItem();
-           
-            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
-           
-            x.TrangThai = true;
-            dbcontext.PHONGs.AddOrUpdate(x);
-            dbcontext.SaveChanges();
-        }
-
-        private void barThanhtoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
-            var gc_item = new GalleryItem();
-            x.TrangThai = false;
-            dbcontext.PHONGs.AddOrUpdate(x);
-            dbcontext.SaveChanges(); 
-
-        }
-
-        private void galleryControl2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
@@ -241,5 +203,13 @@ namespace QLKSThangLong
             LoaiDichVu x = new LoaiDichVu();
             x.ShowDialog();
         }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Phong open = new Phong();
+            open.ShowDialog();
+        }
+
+     
     }
 }
