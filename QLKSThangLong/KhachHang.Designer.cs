@@ -52,7 +52,7 @@ namespace QLKSThangLong
             this.txtTimKH = new System.Windows.Forms.TextBox();
             this.btnTroVeKH = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemKH = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXoaKH = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLapPhieuThue = new DevExpress.XtraEditors.SimpleButton();
             this.btnResetKH = new DevExpress.XtraEditors.SimpleButton();
             this.btnCapNhatKH = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLKH)).BeginInit();
@@ -150,7 +150,7 @@ namespace QLKSThangLong
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 16);
+            this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên khách hàng";
             // 
@@ -159,7 +159,7 @@ namespace QLKSThangLong
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 16);
+            this.label3.Size = new System.Drawing.Size(93, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "CMND/ CCCD";
             // 
@@ -175,7 +175,7 @@ namespace QLKSThangLong
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 16);
+            this.label4.Size = new System.Drawing.Size(91, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Số điện thoại";
             // 
@@ -216,7 +216,7 @@ namespace QLKSThangLong
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(11, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 16);
+            this.label5.Size = new System.Drawing.Size(105, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Mã khách hàng";
             // 
@@ -260,21 +260,21 @@ namespace QLKSThangLong
             this.btnThemKH.Text = "Thêm";
             this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
-            // btnXoaKH
+            // btnLapPhieuThue
             // 
-            this.btnXoaKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaKH.ImageOptions.Image")));
-            this.btnXoaKH.Location = new System.Drawing.Point(42, 425);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnXoaKH.Size = new System.Drawing.Size(94, 47);
-            this.btnXoaKH.TabIndex = 17;
-            this.btnXoaKH.Text = "Xóa";
-            this.btnXoaKH.Click += new System.EventHandler(this.btnXoaKH_Click);
+            this.btnLapPhieuThue.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaKH.ImageOptions.Image")));
+            this.btnLapPhieuThue.Location = new System.Drawing.Point(42, 425);
+            this.btnLapPhieuThue.Name = "btnLapPhieuThue";
+            this.btnLapPhieuThue.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnLapPhieuThue.Size = new System.Drawing.Size(146, 47);
+            this.btnLapPhieuThue.TabIndex = 17;
+            this.btnLapPhieuThue.Text = "Lập phiếu thuê";
+            this.btnLapPhieuThue.Click += new System.EventHandler(this.btnXoaKH_Click);
             // 
             // btnResetKH
             // 
             this.btnResetKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResetKH.ImageOptions.Image")));
-            this.btnResetKH.Location = new System.Drawing.Point(157, 429);
+            this.btnResetKH.Location = new System.Drawing.Point(194, 429);
             this.btnResetKH.Name = "btnResetKH";
             this.btnResetKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnResetKH.Size = new System.Drawing.Size(94, 38);
@@ -285,7 +285,7 @@ namespace QLKSThangLong
             // btnCapNhatKH
             // 
             this.btnCapNhatKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhatKH.ImageOptions.Image")));
-            this.btnCapNhatKH.Location = new System.Drawing.Point(157, 358);
+            this.btnCapNhatKH.Location = new System.Drawing.Point(194, 358);
             this.btnCapNhatKH.Name = "btnCapNhatKH";
             this.btnCapNhatKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnCapNhatKH.Size = new System.Drawing.Size(116, 48);
@@ -300,7 +300,7 @@ namespace QLKSThangLong
             this.ClientSize = new System.Drawing.Size(944, 515);
             this.Controls.Add(this.btnTroVeKH);
             this.Controls.Add(this.btnThemKH);
-            this.Controls.Add(this.btnXoaKH);
+            this.Controls.Add(this.btnLapPhieuThue);
             this.Controls.Add(this.btnResetKH);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -335,7 +335,7 @@ namespace QLKSThangLong
         private System.Windows.Forms.TextBox txtTimKH;
         private DevExpress.XtraEditors.SimpleButton btnCapNhatKH;
         private DevExpress.XtraEditors.SimpleButton btnResetKH;
-        private DevExpress.XtraEditors.SimpleButton btnXoaKH;
+        private DevExpress.XtraEditors.SimpleButton btnLapPhieuThue;
         private DevExpress.XtraEditors.SimpleButton btnThemKH;
         private DevExpress.XtraEditors.SimpleButton btnTroVeKH;
         private System.Windows.Forms.TextBox txtMaKH;

@@ -46,10 +46,10 @@ namespace QLKSThangLong
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTaoKhachMoi = new System.Windows.Forms.Button();
             this.txtMaPhieu = new System.Windows.Forms.TextBox();
-            this.txtSoPhong = new System.Windows.Forms.TextBox();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.btnXuat = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.cbbSoPhong = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachhang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,10 +155,10 @@ namespace QLKSThangLong
             this.Column4});
             this.dgvKhachhang.Location = new System.Drawing.Point(35, 229);
             this.dgvKhachhang.Name = "dgvKhachhang";
-            this.dgvKhachhang.ReadOnly = true;
             this.dgvKhachhang.RowHeadersVisible = false;
             this.dgvKhachhang.RowHeadersWidth = 51;
             this.dgvKhachhang.RowTemplate.Height = 24;
+            this.dgvKhachhang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhachhang.Size = new System.Drawing.Size(511, 209);
             this.dgvKhachhang.TabIndex = 26;
             this.dgvKhachhang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentClick);
@@ -168,62 +168,52 @@ namespace QLKSThangLong
             this.Column1.HeaderText = "Mã khách hàng";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Tên khách hàng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "CMND/CCCD";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "SDT";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // btnTaoKhachMoi
             // 
-            this.btnTaoKhachMoi.Location = new System.Drawing.Point(379, 138);
+            this.btnTaoKhachMoi.Location = new System.Drawing.Point(351, 106);
             this.btnTaoKhachMoi.Name = "btnTaoKhachMoi";
             this.btnTaoKhachMoi.Size = new System.Drawing.Size(167, 31);
             this.btnTaoKhachMoi.TabIndex = 27;
             this.btnTaoKhachMoi.Text = "Tạo khách hàng mới";
             this.btnTaoKhachMoi.UseVisualStyleBackColor = true;
+            this.btnTaoKhachMoi.Click += new System.EventHandler(this.btnTaoKhachMoi_Click);
             // 
             // txtMaPhieu
             // 
-            this.txtMaPhieu.Location = new System.Drawing.Point(154, 103);
+            this.txtMaPhieu.Location = new System.Drawing.Point(155, 106);
             this.txtMaPhieu.Name = "txtMaPhieu";
-            this.txtMaPhieu.Size = new System.Drawing.Size(100, 22);
+            this.txtMaPhieu.Size = new System.Drawing.Size(120, 22);
             this.txtMaPhieu.TabIndex = 28;
-            // 
-            // txtSoPhong
-            // 
-            this.txtSoPhong.Location = new System.Drawing.Point(154, 138);
-            this.txtSoPhong.Name = "txtSoPhong";
-            this.txtSoPhong.Size = new System.Drawing.Size(100, 22);
-            this.txtSoPhong.TabIndex = 28;
             // 
             // txtMaKH
             // 
             this.txtMaKH.Location = new System.Drawing.Point(154, 169);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(100, 22);
+            this.txtMaKH.Size = new System.Drawing.Size(121, 22);
             this.txtMaKH.TabIndex = 28;
             // 
             // btnXuat
             // 
-            this.btnXuat.Location = new System.Drawing.Point(379, 183);
+            this.btnXuat.Location = new System.Drawing.Point(351, 151);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(167, 31);
             this.btnXuat.TabIndex = 27;
@@ -234,17 +224,25 @@ namespace QLKSThangLong
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(563, 229);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(100, 22);
+            this.txtTimKiem.Size = new System.Drawing.Size(239, 22);
             this.txtTimKiem.TabIndex = 29;
+            // 
+            // cbbSoPhong
+            // 
+            this.cbbSoPhong.FormattingEnabled = true;
+            this.cbbSoPhong.Location = new System.Drawing.Point(154, 138);
+            this.cbbSoPhong.Name = "cbbSoPhong";
+            this.cbbSoPhong.Size = new System.Drawing.Size(121, 24);
+            this.cbbSoPhong.TabIndex = 30;
             // 
             // PhieuThuePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 608);
+            this.Controls.Add(this.cbbSoPhong);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.txtMaKH);
-            this.Controls.Add(this.txtSoPhong);
             this.Controls.Add(this.txtMaPhieu);
             this.Controls.Add(this.btnTaoKhachMoi);
             this.Controls.Add(this.btnXuat);
@@ -283,7 +281,6 @@ namespace QLKSThangLong
         private System.Windows.Forms.DataGridView dgvKhachhang;
         private System.Windows.Forms.Button btnTaoKhachMoi;
         private System.Windows.Forms.TextBox txtMaPhieu;
-        private System.Windows.Forms.TextBox txtSoPhong;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -291,5 +288,6 @@ namespace QLKSThangLong
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.ComboBox cbbSoPhong;
     }
 }

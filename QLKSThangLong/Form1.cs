@@ -93,7 +93,7 @@ namespace QLKSThangLong
                     rbtacvu.Visible = true; 
                     rbxuatbc.Visible = true;
                     txtquyen.Text = "Admin";
-                    rbhethong.
+                   
                 }
                 else if(item.Quyen == 2)
                 {
@@ -148,6 +148,7 @@ namespace QLKSThangLong
         }
         private void barThuephong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.Hide();
             PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
             x.TrangThai = true;
             gc_item.ImageOptions.Image = im1;
@@ -156,6 +157,10 @@ namespace QLKSThangLong
             s.Item.Assign(gc_item);
             dbcontext.PHONGs.AddOrUpdate(x);
             dbcontext.SaveChanges();
+            PhieuThuePhong ThuePhong = new PhieuThuePhong();
+            
+
+            ThuePhong.Show();
         }
 
         private void barThanhtoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -210,6 +215,11 @@ namespace QLKSThangLong
             open.ShowDialog();
         }
 
-     
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PhieuThuePhong open = new PhieuThuePhong();
+            open.ShowDialog();
+
+        }
     }
 }

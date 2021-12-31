@@ -1,4 +1,5 @@
-﻿using QLKSThangLong.Model;
+﻿using DevExpress.XtraBars.Ribbon;
+using QLKSThangLong.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,20 +15,48 @@ namespace QLKSThangLong
 
     public partial class PhieuThuePhong : Form
     {
-        DbContextQLKS db = new DbContextQLKS();
+       
+        
+
         public PhieuThuePhong()
         {
             InitializeComponent();
         }
-
+        DbContextQLKS db = new DbContextQLKS();
 
 
 
         private void PhieuThuePhong_Load(object sender, EventArgs e)
         {
-
+           
             List<KHACHHANG> listKH = db.KHACHHANGs.ToList();
+            List<PHONG> listPhong = db.PHONGs.ToList();
+            FillCBBPhong(listPhong);
             FillDataDGV(listKH);
+            getMaKH();
+        }
+        
+        private void getMaKH()
+        {
+            int y = dgvKhachhang.Rows.Count-1;
+            List <KHACHHANG> x = db.KHACHHANGs.ToList();
+            txtMaKH.Text = dgvKhachhang.Rows[y].Cells[0].FormattedValue.ToString();
+            txtMaKH.Enabled = false;
+        }
+        private void FillCBBPhong(List<PHONG> pHONGs)
+        {
+            List<PHONG> phongoff = new List<PHONG>();
+            var result = from c in db.PHONGs
+                         where c.TrangThai == false
+                         select c;
+
+            phongoff = result.ToList();
+            cbbSoPhong.DataSource = phongoff;
+                    cbbSoPhong.DisplayMember = "SoPhong";
+                    cbbSoPhong.ValueMember = "SoPhong";
+                    cbbSoPhong.Text = "Chọn phòng";
+             
+            
         }
 
         private void FillDataDGV(List<KHACHHANG> listKH)
@@ -73,6 +102,12 @@ namespace QLKSThangLong
             List<KHACHHANG> listKH = db.KHACHHANGs.ToList();
             FillDataDGV(listKH);
         }
-        
+
+        private void btnTaoKhachMoi_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KhachHang x = new KhachHang();
+            x.Show();
+        }
     }
 }

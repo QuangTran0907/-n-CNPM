@@ -197,7 +197,7 @@ namespace QLKSThangLong
             this.rbNu.AutoSize = true;
             this.rbNu.Location = new System.Drawing.Point(161, 120);
             this.rbNu.Name = "rbNu";
-            this.rbNu.Size = new System.Drawing.Size(45, 20);
+            this.rbNu.Size = new System.Drawing.Size(47, 21);
             this.rbNu.TabIndex = 12;
             this.rbNu.TabStop = true;
             this.rbNu.Text = "Nữ";
@@ -208,7 +208,7 @@ namespace QLKSThangLong
             this.rbKhac.AutoSize = true;
             this.rbKhac.Location = new System.Drawing.Point(228, 120);
             this.rbKhac.Name = "rbKhac";
-            this.rbKhac.Size = new System.Drawing.Size(58, 20);
+            this.rbKhac.Size = new System.Drawing.Size(61, 21);
             this.rbKhac.TabIndex = 11;
             this.rbKhac.TabStop = true;
             this.rbKhac.Text = "Khác";
@@ -219,7 +219,7 @@ namespace QLKSThangLong
             this.rbNam.AutoSize = true;
             this.rbNam.Location = new System.Drawing.Point(88, 118);
             this.rbNam.Name = "rbNam";
-            this.rbNam.Size = new System.Drawing.Size(57, 20);
+            this.rbNam.Size = new System.Drawing.Size(58, 21);
             this.rbNam.TabIndex = 10;
             this.rbNam.TabStop = true;
             this.rbNam.Text = "Nam";
@@ -230,7 +230,7 @@ namespace QLKSThangLong
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(8, 166);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 16);
+            this.label6.Size = new System.Drawing.Size(116, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Bộ phận làm việc";
             // 
@@ -239,7 +239,7 @@ namespace QLKSThangLong
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(8, 120);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Giới tính";
             // 
@@ -256,7 +256,7 @@ namespace QLKSThangLong
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 268);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 16);
+            this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Địa chỉ";
             // 
@@ -273,7 +273,7 @@ namespace QLKSThangLong
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(8, 225);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 16);
+            this.label3.Size = new System.Drawing.Size(29, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Sđt";
             // 
@@ -290,7 +290,7 @@ namespace QLKSThangLong
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.Size = new System.Drawing.Size(50, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Họ tên";
             // 
@@ -307,7 +307,7 @@ namespace QLKSThangLong
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 16);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã NV";
             // 

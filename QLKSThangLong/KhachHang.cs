@@ -186,28 +186,11 @@ namespace QLKSThangLong
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
-            if (CheckDataInput() == true)
-            {
-                KHACHHANG x = db.KHACHHANGs.Where(p => p.MaKH == txtMaKH.Text).FirstOrDefault();
-                if (x != null)
-                {
-                    x.MaKH = txtMaKH.Text;
-                    x.TenKH = txtTenKH.Text;
-                    x.CMND_CCCD = txtCMND.Text;
-                    x.SDT = txtSDTKH.Text;
-                    db.KHACHHANGs.Remove(x);
-                    db.SaveChanges();
-
-                    loadForm();
-                    loadDGV();
-                    MessageBox.Show("Xóa đối tượng thành công ", "Thông báo");
-                }
-                else
-                {
-                    MessageBox.Show("Không có đối tượng nào trong danh sách ", "Thông báo");
-
-                }
-            }
+            this.Hide();
+            PhieuThuePhong x = new PhieuThuePhong();
+            x.Show();
+            
+            
         }
 
         private void btnResetKH_Click(object sender, EventArgs e)
