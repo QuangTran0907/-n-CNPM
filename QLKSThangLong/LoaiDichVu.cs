@@ -193,5 +193,10 @@ namespace QLKSThangLong
             this.Hide();
           
         }
+
+        private void dgvQLDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
