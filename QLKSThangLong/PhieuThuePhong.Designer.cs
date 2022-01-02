@@ -29,16 +29,13 @@ namespace QLKSThangLong
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuThuePhong));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtpNgayThue = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
             this.dgvKhachhang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,17 +47,23 @@ namespace QLKSThangLong
             this.btnXuat = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbSoPhong = new System.Windows.Forms.ComboBox();
+            this.btnTroVeKH = new DevExpress.XtraEditors.SimpleButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpNgayTraDuKien = new System.Windows.Forms.DateTimePicker();
+            this.cbbMaNV = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dtNgayThue = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachhang)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 106);
+            this.label1.Location = new System.Drawing.Point(37, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mã phiếu thuê";
+            this.label1.Text = "Mã nhân viên";
             // 
             // label2
             // 
@@ -88,24 +91,6 @@ namespace QLKSThangLong
             this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 0;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 473);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Ngày thuê phòng";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 515);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Ngày trả phòng";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -125,24 +110,6 @@ namespace QLKSThangLong
             this.label8.TabIndex = 24;
             this.label8.Text = "PHIẾU THUÊ PHÒNG";
             // 
-            // dtpNgayThue
-            // 
-            this.dtpNgayThue.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayThue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayThue.Location = new System.Drawing.Point(155, 473);
-            this.dtpNgayThue.Name = "dtpNgayThue";
-            this.dtpNgayThue.Size = new System.Drawing.Size(200, 22);
-            this.dtpNgayThue.TabIndex = 25;
-            // 
-            // dtpNgayTra
-            // 
-            this.dtpNgayTra.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayTra.Location = new System.Drawing.Point(155, 515);
-            this.dtpNgayTra.Name = "dtpNgayTra";
-            this.dtpNgayTra.Size = new System.Drawing.Size(200, 22);
-            this.dtpNgayTra.TabIndex = 25;
-            // 
             // dgvKhachhang
             // 
             this.dgvKhachhang.AllowUserToAddRows = false;
@@ -155,6 +122,7 @@ namespace QLKSThangLong
             this.Column4});
             this.dgvKhachhang.Location = new System.Drawing.Point(35, 229);
             this.dgvKhachhang.Name = "dgvKhachhang";
+            this.dgvKhachhang.ReadOnly = true;
             this.dgvKhachhang.RowHeadersVisible = false;
             this.dgvKhachhang.RowHeadersWidth = 51;
             this.dgvKhachhang.RowTemplate.Height = 24;
@@ -168,24 +136,28 @@ namespace QLKSThangLong
             this.Column1.HeaderText = "Mã khách hàng";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Tên khách hàng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "CMND/CCCD";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "SDT";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // btnTaoKhachMoi
             // 
@@ -199,7 +171,7 @@ namespace QLKSThangLong
             // 
             // txtMaPhieu
             // 
-            this.txtMaPhieu.Location = new System.Drawing.Point(155, 106);
+            this.txtMaPhieu.Location = new System.Drawing.Point(155, 101);
             this.txtMaPhieu.Name = "txtMaPhieu";
             this.txtMaPhieu.Size = new System.Drawing.Size(120, 22);
             this.txtMaPhieu.TabIndex = 28;
@@ -219,6 +191,7 @@ namespace QLKSThangLong
             this.btnXuat.TabIndex = 27;
             this.btnXuat.Text = "Lưu và xuất phiếu";
             this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // txtTimKiem
             // 
@@ -235,11 +208,69 @@ namespace QLKSThangLong
             this.cbbSoPhong.Size = new System.Drawing.Size(121, 24);
             this.cbbSoPhong.TabIndex = 30;
             // 
+            // btnTroVeKH
+            // 
+            this.btnTroVeKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTroVeKH.ImageOptions.Image")));
+            this.btnTroVeKH.Location = new System.Drawing.Point(916, 567);
+            this.btnTroVeKH.Name = "btnTroVeKH";
+            this.btnTroVeKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnTroVeKH.Size = new System.Drawing.Size(94, 29);
+            this.btnTroVeKH.TabIndex = 31;
+            this.btnTroVeKH.Text = "Trở về";
+            this.btnTroVeKH.Click += new System.EventHandler(this.btnTroVeKH_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 515);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Ngày trả dự kiến";
+            // 
+            // dtpNgayTraDuKien
+            // 
+            this.dtpNgayTraDuKien.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayTraDuKien.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayTraDuKien.Location = new System.Drawing.Point(155, 515);
+            this.dtpNgayTraDuKien.Name = "dtpNgayTraDuKien";
+            this.dtpNgayTraDuKien.Size = new System.Drawing.Size(200, 22);
+            this.dtpNgayTraDuKien.TabIndex = 25;
+            // 
+            // cbbMaNV
+            // 
+            this.cbbMaNV.FormattingEnabled = true;
+            this.cbbMaNV.Location = new System.Drawing.Point(154, 71);
+            this.cbbMaNV.Name = "cbbMaNV";
+            this.cbbMaNV.Size = new System.Drawing.Size(121, 24);
+            this.cbbMaNV.TabIndex = 32;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(32, 106);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 17);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Mã phiếu thuê";
+            // 
+            // dtNgayThue
+            // 
+            this.dtNgayThue.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayThue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayThue.Location = new System.Drawing.Point(154, 543);
+            this.dtNgayThue.Name = "dtNgayThue";
+            this.dtNgayThue.Size = new System.Drawing.Size(200, 22);
+            this.dtNgayThue.TabIndex = 25;
+            // 
             // PhieuThuePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 608);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cbbMaNV);
+            this.Controls.Add(this.btnTroVeKH);
             this.Controls.Add(this.cbbSoPhong);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.txtMaKH);
@@ -247,12 +278,11 @@ namespace QLKSThangLong
             this.Controls.Add(this.btnTaoKhachMoi);
             this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.dgvKhachhang);
-            this.Controls.Add(this.dtpNgayTra);
-            this.Controls.Add(this.dtpNgayThue);
+            this.Controls.Add(this.dtNgayThue);
+            this.Controls.Add(this.dtpNgayTraDuKien);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -272,12 +302,8 @@ namespace QLKSThangLong
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtpNgayThue;
-        private System.Windows.Forms.DateTimePicker dtpNgayTra;
         private System.Windows.Forms.DataGridView dgvKhachhang;
         private System.Windows.Forms.Button btnTaoKhachMoi;
         private System.Windows.Forms.TextBox txtMaPhieu;
@@ -289,5 +315,11 @@ namespace QLKSThangLong
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.ComboBox cbbSoPhong;
+        private DevExpress.XtraEditors.SimpleButton btnTroVeKH;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpNgayTraDuKien;
+        private System.Windows.Forms.ComboBox cbbMaNV;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dtNgayThue;
     }
 }

@@ -212,5 +212,10 @@ namespace QLKSThangLong
 
             FillDataDGV(result.ToList());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            KhachHang_Load(sender, e);
+        }
     }
 }

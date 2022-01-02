@@ -24,16 +24,22 @@ namespace QLKSThangLong
         public Form1()
         {
             InitializeComponent();
-            galleryControl2.Gallery.ItemClick += new GalleryItemClickEventHandler(Gallery_ItemClick);
+            galleryControl2.Gallery.ItemRightClick += new GalleryItemClickEventHandler(Gallery_ItemRightClick);
+            galleryControl2.Gallery.ItemDoubleClick += new GalleryItemClickEventHandler(Gallery_ItemDoubleClick);
 
-        }   
+
+
+        }
+
+       
+
         DbContextQLKS dbcontext = new DbContextQLKS();
         string ma = "";
         List<PHONG> PH = new List<PHONG>();
         Image im1 = Image.FromFile("D:\\01.png");
         Image im2 = Image.FromFile("D:\\02.jpg");
         GalleryItemEventArgs s;
-        GalleryItem gc_item = new GalleryItem();
+        public GalleryItem gc_item = new GalleryItem();
 
         public List<TAIKHOAN> listCon { get; set; }
         private void Form1_Load(object sender, EventArgs e)
@@ -118,7 +124,35 @@ namespace QLKSThangLong
                 }
             }
         }
-        private void Gallery_ItemClick(object sender, GalleryItemEventArgs e)
+        private void Gallery_ItemDoubleClick(object sender, GalleryItemClickEventArgs e)
+        {
+            string id = e.Item.Value.ToString();
+            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == id).FirstOrDefault();
+            if (x.TrangThai == true)
+            {
+                x.TrangThai = false;
+                gc_item.ImageOptions.Image = im2;
+                gc_item.Caption = e.Item.Caption;
+                gc_item.Value = e.Item.Value;
+                e.Item.Assign(gc_item);
+                dbcontext.PHONGs.AddOrUpdate(x);
+                dbcontext.SaveChanges();
+
+            }
+            else
+            {
+                x.TrangThai = true;
+                gc_item.ImageOptions.Image = im1;
+                gc_item.Caption = e.Item.Caption;
+                gc_item.Value = e.Item.Value;
+                e.Item.Assign(gc_item);
+                dbcontext.PHONGs.AddOrUpdate(x);
+                dbcontext.SaveChanges();
+
+            }
+        }
+
+        private void Gallery_ItemRightClick(object sender, GalleryItemClickEventArgs e)
         {
             string id = e.Item.Value.ToString();
             ma = id;
@@ -128,13 +162,13 @@ namespace QLKSThangLong
                 barDichvu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barThanhtoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barThuephong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            }    
+            }
             else
             {
                 barThuephong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barDichvu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                barThanhtoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;              
-            }         
+                barThanhtoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             if (x.TrangThai == true)
                 gc_item.ImageOptions.Image = im1;
             else
@@ -148,31 +182,15 @@ namespace QLKSThangLong
         }
         private void barThuephong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Hide();
-            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
-            x.TrangThai = true;
-            gc_item.ImageOptions.Image = im1;
-            gc_item.Caption = s.Item.Caption;
-            gc_item.Value = s.Item.Value;
-            s.Item.Assign(gc_item);
-            dbcontext.PHONGs.AddOrUpdate(x);
-            dbcontext.SaveChanges();
             PhieuThuePhong ThuePhong = new PhieuThuePhong();
-            
-
+            ThuePhong.connect = s;
             ThuePhong.Show();
         }
 
         private void barThanhtoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PHONG x = dbcontext.PHONGs.Where(p => p.SoPhong == ma).FirstOrDefault();
-            x.TrangThai = false;
-            gc_item.ImageOptions.Image = im2;
-            gc_item.Caption = s.Item.Caption;
-            gc_item.Value = s.Item.Value;
-            s.Item.Assign(gc_item);
-            dbcontext.PHONGs.AddOrUpdate(x);
-            dbcontext.SaveChanges();
+            PhieuThuePhong ThuePhong = new PhieuThuePhong();
+            ThuePhong.connect = s;
 
         }
         public static DataTable ListToDataTable(List<PHONG> phongg)
@@ -220,6 +238,12 @@ namespace QLKSThangLong
             PhieuThuePhong open = new PhieuThuePhong();
             open.ShowDialog();
 
+        }
+
+        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DangKyDV open = new DangKyDV();
+            open.Show();
         }
     }
 }
