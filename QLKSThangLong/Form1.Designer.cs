@@ -72,9 +72,11 @@ namespace QLKSThangLong
             this.barThongtinphong = new DevExpress.XtraBars.BarButtonItem();
             this.barThemvattu = new DevExpress.XtraBars.BarButtonItem();
             this.barThuephong = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.rbhethong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbtacvu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -150,9 +152,10 @@ namespace QLKSThangLong
             this.barButtonItem35,
             this.barThongtinphong,
             this.barThemvattu,
-            this.barThuephong});
+            this.barThuephong,
+            this.barButtonItem17});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 41;
+            this.ribbonControl1.MaxItemId = 42;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem29);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -376,6 +379,7 @@ namespace QLKSThangLong
             this.barDichvu.Id = 29;
             this.barDichvu.Name = "barDichvu";
             this.barDichvu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barDichvu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barDichvu_ItemClick);
             // 
             // barThanhtoan
             // 
@@ -446,12 +450,14 @@ namespace QLKSThangLong
             this.barThongtinphong.Caption = "Thông tin phòng";
             this.barThongtinphong.Id = 38;
             this.barThongtinphong.Name = "barThongtinphong";
+            this.barThongtinphong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barThongtinphong_ItemClick);
             // 
             // barThemvattu
             // 
             this.barThemvattu.Caption = "Thêm vật tư";
             this.barThemvattu.Id = 39;
             this.barThemvattu.Name = "barThemvattu";
+            this.barThemvattu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barThemvattu_ItemClick);
             // 
             // barThuephong
             // 
@@ -461,11 +467,20 @@ namespace QLKSThangLong
             this.barThuephong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barThuephong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barThuephong_ItemClick);
             // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "Đổi mật khẩu";
+            this.barButtonItem17.Id = 41;
+            this.barButtonItem17.ImageOptions.SvgImage = global::QLKSThangLong.Properties.Resources.security_key1;
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick);
+            // 
             // rbhethong
             // 
             this.rbhethong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup12,
-            this.ribbonPageGroup13});
+            this.ribbonPageGroup13,
+            this.ribbonPageGroup15});
             this.rbhethong.Name = "rbhethong";
             this.rbhethong.Text = "Hệ thống";
             this.rbhethong.Visible = false;
@@ -479,6 +494,12 @@ namespace QLKSThangLong
             // 
             this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem31);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ImageOptions.SvgImage = global::QLKSThangLong.Properties.Resources.security_key;
+            this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             // 
             // rbtacvu
             // 
@@ -724,6 +745,8 @@ namespace QLKSThangLong
         private DevExpress.XtraBars.BarButtonItem barThemvattu;
         private DevExpress.XtraBars.BarButtonItem barThuephong;
         private System.Windows.Forms.TextBox txtquyen;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
     }
 }
 

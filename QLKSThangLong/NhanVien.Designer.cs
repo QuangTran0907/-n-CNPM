@@ -55,14 +55,15 @@ namespace QLKSThangLong
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnThemNV = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCapNhatNV = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXoaNV = new DevExpress.XtraEditors.SimpleButton();
-            this.btnResetNV = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTimKiemNV = new System.Windows.Forms.TextBox();
-            this.btnTroVeNV = new DevExpress.XtraEditors.SimpleButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnTroVeNV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoaNV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnResetNV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCapNhatNV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThemNV = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -98,8 +99,9 @@ namespace QLKSThangLong
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvQLNV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvQLNV.Location = new System.Drawing.Point(332, 61);
+            this.dgvQLNV.Location = new System.Drawing.Point(382, 61);
             this.dgvQLNV.Name = "dgvQLNV";
+            this.dgvQLNV.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,7 +114,7 @@ namespace QLKSThangLong
             this.dgvQLNV.RowHeadersWidth = 51;
             this.dgvQLNV.RowTemplate.Height = 24;
             this.dgvQLNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQLNV.Size = new System.Drawing.Size(600, 501);
+            this.dgvQLNV.Size = new System.Drawing.Size(758, 408);
             this.dgvQLNV.TabIndex = 0;
             this.dgvQLNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLNV_CellClick);
             // 
@@ -121,36 +123,42 @@ namespace QLKSThangLong
             this.dgvMaNhanVien.HeaderText = "Mã nhân viên";
             this.dgvMaNhanVien.MinimumWidth = 6;
             this.dgvMaNhanVien.Name = "dgvMaNhanVien";
+            this.dgvMaNhanVien.ReadOnly = true;
             // 
             // dgvTen
             // 
             this.dgvTen.HeaderText = "Tên";
             this.dgvTen.MinimumWidth = 6;
             this.dgvTen.Name = "dgvTen";
+            this.dgvTen.ReadOnly = true;
             // 
             // dgvGT
             // 
             this.dgvGT.HeaderText = "Giới tính";
             this.dgvGT.MinimumWidth = 6;
             this.dgvGT.Name = "dgvGT";
+            this.dgvGT.ReadOnly = true;
             // 
             // dgvBPLV
             // 
             this.dgvBPLV.HeaderText = "Bộ Phận Làm Việc";
             this.dgvBPLV.MinimumWidth = 6;
             this.dgvBPLV.Name = "dgvBPLV";
+            this.dgvBPLV.ReadOnly = true;
             // 
             // dgvSDT
             // 
             this.dgvSDT.HeaderText = "Số điện thoại";
             this.dgvSDT.MinimumWidth = 6;
             this.dgvSDT.Name = "dgvSDT";
+            this.dgvSDT.ReadOnly = true;
             // 
             // dgvDiaChi
             // 
             this.dgvDiaChi.HeaderText = "Địa chỉ";
             this.dgvDiaChi.MinimumWidth = 6;
             this.dgvDiaChi.Name = "dgvDiaChi";
+            this.dgvDiaChi.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -170,7 +178,7 @@ namespace QLKSThangLong
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(22, 129);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(304, 321);
+            this.groupBox1.Size = new System.Drawing.Size(339, 321);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin NV";
@@ -311,56 +319,12 @@ namespace QLKSThangLong
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã NV";
             // 
-            // btnThemNV
-            // 
-            this.btnThemNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNV.ImageOptions.Image")));
-            this.btnThemNV.Location = new System.Drawing.Point(44, 456);
-            this.btnThemNV.Name = "btnThemNV";
-            this.btnThemNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnThemNV.Size = new System.Drawing.Size(94, 47);
-            this.btnThemNV.TabIndex = 19;
-            this.btnThemNV.Text = "Thêm";
-            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
-            // 
-            // btnCapNhatNV
-            // 
-            this.btnCapNhatNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhatNV.ImageOptions.Image")));
-            this.btnCapNhatNV.Location = new System.Drawing.Point(174, 456);
-            this.btnCapNhatNV.Name = "btnCapNhatNV";
-            this.btnCapNhatNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnCapNhatNV.Size = new System.Drawing.Size(116, 48);
-            this.btnCapNhatNV.TabIndex = 20;
-            this.btnCapNhatNV.Text = " Cập nhật";
-            this.btnCapNhatNV.Click += new System.EventHandler(this.btnCapNhatNV_Click);
-            // 
-            // btnXoaNV
-            // 
-            this.btnXoaNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.ImageOptions.Image")));
-            this.btnXoaNV.Location = new System.Drawing.Point(44, 514);
-            this.btnXoaNV.Name = "btnXoaNV";
-            this.btnXoaNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnXoaNV.Size = new System.Drawing.Size(94, 47);
-            this.btnXoaNV.TabIndex = 22;
-            this.btnXoaNV.Text = "Xóa";
-            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
-            // 
-            // btnResetNV
-            // 
-            this.btnResetNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResetNV.ImageOptions.Image")));
-            this.btnResetNV.Location = new System.Drawing.Point(174, 519);
-            this.btnResetNV.Name = "btnResetNV";
-            this.btnResetNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnResetNV.Size = new System.Drawing.Size(94, 38);
-            this.btnResetNV.TabIndex = 21;
-            this.btnResetNV.Text = "Reset";
-            this.btnResetNV.Click += new System.EventHandler(this.btnResetNV_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtTimKiemNV);
             this.groupBox2.Location = new System.Drawing.Point(22, 56);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(304, 59);
+            this.groupBox2.Size = new System.Drawing.Size(339, 59);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm NV";
@@ -373,18 +337,6 @@ namespace QLKSThangLong
             this.txtTimKiemNV.TabIndex = 8;
             this.txtTimKiemNV.TextChanged += new System.EventHandler(this.txtTimKiemNV_TextChanged);
             // 
-            // btnTroVeNV
-            // 
-            this.btnTroVeNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTroVeNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTroVeNV.ImageOptions.Image")));
-            this.btnTroVeNV.Location = new System.Drawing.Point(838, 568);
-            this.btnTroVeNV.Name = "btnTroVeNV";
-            this.btnTroVeNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnTroVeNV.Size = new System.Drawing.Size(94, 29);
-            this.btnTroVeNV.TabIndex = 24;
-            this.btnTroVeNV.Text = "Trở về";
-            this.btnTroVeNV.Click += new System.EventHandler(this.btnTroVeNV_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -396,15 +348,83 @@ namespace QLKSThangLong
             this.label7.TabIndex = 25;
             this.label7.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
+            // btnTroVeNV
+            // 
+            this.btnTroVeNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTroVeNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTroVeNV.ImageOptions.Image")));
+            this.btnTroVeNV.Location = new System.Drawing.Point(1046, 587);
+            this.btnTroVeNV.Name = "btnTroVeNV";
+            this.btnTroVeNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnTroVeNV.Size = new System.Drawing.Size(94, 29);
+            this.btnTroVeNV.TabIndex = 24;
+            this.btnTroVeNV.Text = "Trở về";
+            this.btnTroVeNV.Click += new System.EventHandler(this.btnTroVeNV_Click);
+            // 
+            // btnXoaNV
+            // 
+            this.btnXoaNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.ImageOptions.Image")));
+            this.btnXoaNV.Location = new System.Drawing.Point(14, 524);
+            this.btnXoaNV.Name = "btnXoaNV";
+            this.btnXoaNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnXoaNV.Size = new System.Drawing.Size(94, 47);
+            this.btnXoaNV.TabIndex = 22;
+            this.btnXoaNV.Text = "Xóa";
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.ImageOptions.Image = global::QLKSThangLong.Properties.Resources.save_32x32;
+            this.btnLuu.Location = new System.Drawing.Point(135, 475);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnLuu.Size = new System.Drawing.Size(94, 38);
+            this.btnLuu.TabIndex = 21;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuuNV_Click);
+            // 
+            // btnResetNV
+            // 
+            this.btnResetNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResetNV.ImageOptions.Image")));
+            this.btnResetNV.Location = new System.Drawing.Point(250, 528);
+            this.btnResetNV.Name = "btnResetNV";
+            this.btnResetNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnResetNV.Size = new System.Drawing.Size(92, 38);
+            this.btnResetNV.TabIndex = 21;
+            this.btnResetNV.Text = "Reset";
+            this.btnResetNV.Click += new System.EventHandler(this.btnResetNV_Click);
+            // 
+            // btnCapNhatNV
+            // 
+            this.btnCapNhatNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhatNV.ImageOptions.Image")));
+            this.btnCapNhatNV.Location = new System.Drawing.Point(135, 523);
+            this.btnCapNhatNV.Name = "btnCapNhatNV";
+            this.btnCapNhatNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnCapNhatNV.Size = new System.Drawing.Size(116, 48);
+            this.btnCapNhatNV.TabIndex = 20;
+            this.btnCapNhatNV.Text = " Cập nhật";
+            this.btnCapNhatNV.Click += new System.EventHandler(this.btnCapNhatNV_Click);
+            // 
+            // btnThemNV
+            // 
+            this.btnThemNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNV.ImageOptions.Image")));
+            this.btnThemNV.Location = new System.Drawing.Point(14, 466);
+            this.btnThemNV.Name = "btnThemNV";
+            this.btnThemNV.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnThemNV.Size = new System.Drawing.Size(94, 47);
+            this.btnThemNV.TabIndex = 19;
+            this.btnThemNV.Text = "Thêm";
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 609);
+            this.ClientSize = new System.Drawing.Size(1152, 628);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnTroVeNV);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnXoaNV);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnResetNV);
             this.Controls.Add(this.btnCapNhatNV);
             this.Controls.Add(this.btnThemNV);
@@ -455,5 +475,6 @@ namespace QLKSThangLong
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvBPLV;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDiaChi;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
     }
 }

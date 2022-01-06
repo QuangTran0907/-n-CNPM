@@ -34,7 +34,7 @@ namespace QLKSThangLong
                 int newRow = dgvQLDV.Rows.Add();
                 dgvQLDV.Rows[newRow].Cells[0].Value = item.MaDV;
                 dgvQLDV.Rows[newRow].Cells[1].Value = item.TenDV;
-                dgvQLDV.Rows[newRow].Cells[2].Value = item.GiaDV;
+                dgvQLDV.Rows[newRow].Cells[2].Value = string.Format("{0:#,##0.00}", item.GiaDV);
             }
         }
 

@@ -24,7 +24,8 @@ namespace QLKSThangLong
             InitializeComponent();
         }
         DbContextQLKS db = new DbContextQLKS();
-        public GalleryItemEventArgs connect { get; set; }
+        List<PHONG> phongoff = new List<PHONG>();
+        public string connect { get; set; }
 
 
 
@@ -32,8 +33,6 @@ namespace QLKSThangLong
         {
             
             List<KHACHHANG> listKH = db.KHACHHANGs.ToList();
-            List<PHONG> listPhong = db.PHONGs.ToList();
-            FillCBBPhong(listPhong);
             FillCBBNV();
             FillDataDGV(listKH);
             getMaKH();
@@ -41,16 +40,28 @@ namespace QLKSThangLong
             txtMaPhieu.Text = Auto_ID();
 
 
-
         }
-        private void getSoPhong()
+        public void getSoPhong()
         {
             if(connect != null)
             {
-                cbbSoPhong.Text = connect.Item.Caption;
+                List<PHONG> getLoaiPhong = db.PHONGs.ToList();
+                cbbSoPhong.Text = connect;
                 cbbSoPhong.Enabled = false;
-            }    
-           
+                foreach (var item in getLoaiPhong)
+                {
+                    if (item.SoPhong == connect)
+                    {
+                        cbbLoaiPhong.Text = item.LoaiPhong;
+                        cbbLoaiPhong.Enabled = false;
+                    }
+                }
+
+            }
+          
+
+
+
         }
         private void FillCBBNV()
         {
@@ -75,13 +86,8 @@ namespace QLKSThangLong
         }
         private void FillCBBPhong(List<PHONG> pHONGs)
         {
-            List<PHONG> phongoff = new List<PHONG>();
-            var result = from c in db.PHONGs
-                         where c.TrangThai == false
-                         select c;
-
-            phongoff = result.ToList();
-            cbbSoPhong.DataSource = phongoff;
+           
+            cbbSoPhong.DataSource = pHONGs;
                     cbbSoPhong.DisplayMember = "SoPhong";
                     cbbSoPhong.ValueMember = "SoPhong";
                     cbbSoPhong.Text = "Chọn phòng";
@@ -135,9 +141,10 @@ namespace QLKSThangLong
 
         private void btnTaoKhachMoi_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             KhachHang x = new KhachHang();
-            x.Show();
+            x.ShowDialog();
+            this.Hide();
         }
         private string Auto_ID()
         {
@@ -179,6 +186,50 @@ namespace QLKSThangLong
             this.Hide();
             Form1 open = new Form1();
             
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (connect == null)
+            {
+                var result = from c in db.PHONGs
+                             where c.TrangThai == false && c.LoaiPhong == cbbLoaiPhong.Text
+                             select c;
+                phongoff = result.ToList();
+                if (phongoff.Count != 0)
+                {
+                    FillCBBPhong(phongoff);
+                    cbbSoPhong.Enabled = true;
+                }
+                else
+                {
+                    FillCBBPhong(null);
+                    cbbSoPhong.Text = "phòng loại này đã hết";
+                    cbbSoPhong.Enabled = false;
+
+                }
+            }
+
+
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            var result = from c in db.KHACHHANGs
+                         where c.TenKH.Contains(txtTimKiem.Text)
+                         select c;
+
+            FillDataDGV(result.ToList());
+        }
+
+        private void cbbSoPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

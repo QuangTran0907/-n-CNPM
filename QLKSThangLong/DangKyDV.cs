@@ -19,6 +19,7 @@ namespace QLKSThangLong
         {
             InitializeComponent();
         }
+        public string connect { get; set; }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -27,11 +28,29 @@ namespace QLKSThangLong
 
         private void DangKyDV_Load(object sender, EventArgs e)
         {
+            List<PHONG> listPhong = db.PHONGs.ToList();
             List<PHIEUDANGKIDV> listDKDV = db.PHIEUDANGKIDVs.ToList();
             List<DICHVU> listDV = db.DICHVUs.ToList();
             FillDataDGV(listDKDV);
             FillDataCBO(listDV);
             loadForm();
+            cbbSoPhong.Text = connect;
+            cbbSoPhong.Enabled = false;
+            var result = from c in listPhong
+                         where c.TrangThai == true
+                         select c;
+
+            FillCBBPhong(result.ToList());
+        }
+        private void FillCBBPhong(List<PHONG> pHONGs)
+        {
+
+            cbbSoPhong.DataSource = pHONGs;
+            cbbSoPhong.DisplayMember = "SoPhong";
+            cbbSoPhong.ValueMember = "SoPhong";
+            cbbSoPhong.Text = "Chọn phòng";
+
+
         }
 
         private void FillDataCBO(List<DICHVU> listDV)
@@ -54,7 +73,7 @@ namespace QLKSThangLong
                 dgvDKDV.Rows[newRow].Cells[2].Value = item.DICHVU.TenDV;
                 dgvDKDV.Rows[newRow].Cells[3].Value = item.SoLuong;
                 dgvDKDV.Rows[newRow].Cells[4].Value = item.NgaySuDung.Value.ToString("dd/MM/yyyy");
-                dgvDKDV.Rows[newRow].Cells[5].Value = item.Tongtien;
+                dgvDKDV.Rows[newRow].Cells[5].Value = string.Format("{0:#,##0.00}", item.Tongtien); 
 
             }
         }
@@ -70,7 +89,7 @@ namespace QLKSThangLong
                     txtMaPDV.Text = dgvDKDV.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                     txtSoLuongDV.Text = dgvDKDV.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
                     cbbTenDV.Text = dgvDKDV.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-                    txtSoPhongDV.Text = dgvDKDV.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                    cbbSoPhong.Text = dgvDKDV.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 }
             }
             catch (Exception)
@@ -82,7 +101,7 @@ namespace QLKSThangLong
 
         private bool CheckDataInput()
         {
-            if (txtSoLuongDV.Text == "" || txtSoPhongDV.Text == "")
+            if (txtSoLuongDV.Text == "" || cbbSoPhong.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return false;
@@ -100,25 +119,35 @@ namespace QLKSThangLong
             for (int i = 0; i < dgvDKDV.Rows.Count; i++)
             {
                 if (dgvDKDV.Rows.Count < 10)
-                    makh = $"KH0{i}";
+                    makh = $"PDV0{i+1}";
 
                 else
-                    makh = $"KH{i}";
+                    makh = $"PDV{i+1}";
             }
             return makh;
         }
         private void btnThemDKDV_Click(object sender, EventArgs e)
         {
-
+            List<DICHVU> listDV = db.DICHVUs.ToList();
             if (CheckDataInput() == true)
             {
                 if (checkMaDV(txtMaPDV.Text) == false)
                 {
                     PHIEUDANGKIDV x = new PHIEUDANGKIDV();
+                   
                     x.MaPhieuDV = Auto_ID();
                     x.SoLuong = Convert.ToByte(txtSoLuongDV.Text);
-                    x.SoPhong = txtSoPhongDV.Text;
-                    x.DICHVU.TenDV = cbbTenDV.Text;
+                    x.SoPhong = cbbSoPhong.Text;
+                    x.NgaySuDung = DateTime.Today;
+                    foreach (var item in listDV)
+                    {
+                        if (cbbTenDV.Text == item.TenDV)
+                        {
+                            x.MaDV = item.MaDV;
+                            x.Tongtien = item.GiaDV * x.SoLuong.Value;
+                        }
+                    }
+                  
                     db.PHIEUDANGKIDVs.AddOrUpdate(x);
                     db.SaveChanges();
 
@@ -132,6 +161,8 @@ namespace QLKSThangLong
                     MessageBox.Show("Đăng ký dịch vụ đã tồn tại ", "Thông báo");
                 }
             }
+            cbbSoPhong.Enabled = true;
+            
         }
         private bool checkMaDV(string check)
         {
@@ -151,7 +182,6 @@ namespace QLKSThangLong
 
             txtMaPDV.Clear();
             txtSoLuongDV.Clear();
-            txtSoPhongDV.Clear();
            
         }
         private void loadDGV()
@@ -169,7 +199,7 @@ namespace QLKSThangLong
             {
                 x.MaPhieuDV = txtMaPDV.Text;
                 x.SoLuong = Convert.ToByte(txtSoLuongDV.Text);
-                x.SoPhong = txtSoPhongDV.Text;
+                x.SoPhong = cbbSoPhong.Text;
                 x.DICHVU.TenDV = cbbTenDV.Text;
                 db.PHIEUDANGKIDVs.Remove(x);
                 db.SaveChanges();

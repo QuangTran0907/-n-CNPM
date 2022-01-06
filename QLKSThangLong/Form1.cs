@@ -20,7 +20,7 @@ namespace QLKSThangLong
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace QLKSThangLong
 
         }
 
-       
+
 
         DbContextQLKS dbcontext = new DbContextQLKS();
         string ma = "";
@@ -45,7 +45,11 @@ namespace QLKSThangLong
         private void Form1_Load(object sender, EventArgs e)
         {
             CheckQuyen();
+            load_Gallery();
 
+        }
+        private void load_Gallery()
+        {
             List<PHONG> pHONGs = dbcontext.PHONGs.ToList();
 
             galleryControl2.Gallery.ItemImageLayout = ImageLayoutMode.ZoomInside;
@@ -87,21 +91,21 @@ namespace QLKSThangLong
 
 
         }
-      
+
         private void CheckQuyen()
         {
             foreach (var item in listCon)
             {
-                if(item.Quyen == 1)
+                if (item.Quyen == 1)
                 {
                     rbdanhmuc.Visible = true;
                     rbhethong.Visible = true;
-                    rbtacvu.Visible = true; 
+                    rbtacvu.Visible = true;
                     rbxuatbc.Visible = true;
                     txtquyen.Text = "Admin";
-                   
+
                 }
-                else if(item.Quyen == 2)
+                else if (item.Quyen == 2)
                 {
                     rbdanhmuc.Visible = true;
                     rbxuatbc.Visible = true;
@@ -109,7 +113,7 @@ namespace QLKSThangLong
                     txtquyen.Text = "Quản lý";
 
                 }
-                else if(item.Quyen == 3)
+                else if (item.Quyen == 3)
                 {
                     galleryControl2.Visible = true;
                     rbtacvu.Visible = true;
@@ -183,14 +187,13 @@ namespace QLKSThangLong
         private void barThuephong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             PhieuThuePhong ThuePhong = new PhieuThuePhong();
-            ThuePhong.connect = s;
+            ThuePhong.connect = ma;
             ThuePhong.Show();
         }
 
         private void barThanhtoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PhieuThuePhong ThuePhong = new PhieuThuePhong();
-            ThuePhong.connect = s;
+           
 
         }
         public static DataTable ListToDataTable(List<PHONG> phongg)
@@ -217,12 +220,12 @@ namespace QLKSThangLong
             this.Close();
             DangNhap dn = new DangNhap();
             dn.ShowDialog();
-           
+
         }
 
         private void barloaidv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
             LoaiDichVu x = new LoaiDichVu();
             x.ShowDialog();
         }
@@ -245,5 +248,39 @@ namespace QLKSThangLong
             DangKyDV open = new DangKyDV();
             open.Show();
         }
+
+        private void barThongtinphong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            List<PHONG> listPhong = dbcontext.PHONGs.ToList();
+
+            foreach (var item in listPhong)
+            {
+                if (item.SoPhong == s.Item.Caption)
+                    MessageBox.Show(" Số phòng: " + item.SoPhong + "\n Loại phòng: " + item.LoaiPhong + "\n Số người tối đa: " + item.SoNguoiToiDa + "\n Giá: " + string.Format("{0:#,##0.00}", item.GiaPhong) + "\n " + item.ThongTinPhong);
+            }
+
+        }
+
+        private void barThemvattu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SuDungVatTu con = new SuDungVatTu();
+            con.connect = ma;
+            con.ShowDialog();
+        }
+
+        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DoiMatKhau open = new DoiMatKhau();
+            open.lisPass = listCon;
+            open.ShowDialog();
+        }
+
+        private void barDichvu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DangKyDV open = new DangKyDV();
+            open.connect = ma;
+            open.ShowDialog();
+        }
     }
 }
+

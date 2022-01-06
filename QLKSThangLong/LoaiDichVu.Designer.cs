@@ -132,14 +132,14 @@ namespace QLKSThangLong
             // 
             this.txtMaDV.Location = new System.Drawing.Point(151, 21);
             this.txtMaDV.Name = "txtMaDV";
-            this.txtMaDV.Size = new System.Drawing.Size(100, 22);
+            this.txtMaDV.Size = new System.Drawing.Size(162, 22);
             this.txtMaDV.TabIndex = 2;
             // 
             // txtGiaDV
             // 
             this.txtGiaDV.Location = new System.Drawing.Point(151, 85);
             this.txtGiaDV.Name = "txtGiaDV";
-            this.txtGiaDV.Size = new System.Drawing.Size(100, 22);
+            this.txtGiaDV.Size = new System.Drawing.Size(162, 22);
             this.txtGiaDV.TabIndex = 4;
             // 
             // label2

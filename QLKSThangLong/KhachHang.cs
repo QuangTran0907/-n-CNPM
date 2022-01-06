@@ -188,7 +188,8 @@ namespace QLKSThangLong
         {
             this.Hide();
             PhieuThuePhong x = new PhieuThuePhong();
-            x.Show();
+            x.ShowDialog();
+            x.getSoPhong();
             
             
         }

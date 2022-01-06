@@ -29,9 +29,9 @@ namespace QLKSThangLong
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHang));
             this.dgvQLKH = new System.Windows.Forms.DataGridView();
             this.dgvMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,38 +63,38 @@ namespace QLKSThangLong
             // dgvQLKH
             // 
             this.dgvQLKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvQLKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvMaKH,
             this.dgvTenKH,
             this.dgvCMND,
             this.dgvSDT});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvQLKH.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLKH.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvQLKH.Location = new System.Drawing.Point(350, 72);
             this.dgvQLKH.Name = "dgvQLKH";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLKH.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLKH.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvQLKH.RowHeadersVisible = false;
             this.dgvQLKH.RowHeadersWidth = 51;
             this.dgvQLKH.RowTemplate.Height = 24;
@@ -241,10 +241,11 @@ namespace QLKSThangLong
             // btnTroVeKH
             // 
             this.btnTroVeKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTroVeKH.ImageOptions.Image")));
-            this.btnTroVeKH.Location = new System.Drawing.Point(838, 473);
+            this.btnTroVeKH.Location = new System.Drawing.Point(1048, 591);
+            this.btnTroVeKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTroVeKH.Name = "btnTroVeKH";
             this.btnTroVeKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnTroVeKH.Size = new System.Drawing.Size(94, 29);
+            this.btnTroVeKH.Size = new System.Drawing.Size(118, 36);
             this.btnTroVeKH.TabIndex = 19;
             this.btnTroVeKH.Text = "Trở về";
             this.btnTroVeKH.Click += new System.EventHandler(this.btnTroVeKH_Click);
@@ -252,10 +253,11 @@ namespace QLKSThangLong
             // btnThemKH
             // 
             this.btnThemKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemKH.ImageOptions.Image")));
-            this.btnThemKH.Location = new System.Drawing.Point(42, 359);
+            this.btnThemKH.Location = new System.Drawing.Point(14, 431);
+            this.btnThemKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThemKH.Name = "btnThemKH";
             this.btnThemKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnThemKH.Size = new System.Drawing.Size(94, 47);
+            this.btnThemKH.Size = new System.Drawing.Size(118, 59);
             this.btnThemKH.TabIndex = 18;
             this.btnThemKH.Text = "Thêm";
             this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
@@ -263,10 +265,11 @@ namespace QLKSThangLong
             // btnLapPhieuThue
             // 
             this.btnLapPhieuThue.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLapPhieuThue.ImageOptions.Image")));
-            this.btnLapPhieuThue.Location = new System.Drawing.Point(42, 425);
+            this.btnLapPhieuThue.Location = new System.Drawing.Point(14, 513);
+            this.btnLapPhieuThue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLapPhieuThue.Name = "btnLapPhieuThue";
             this.btnLapPhieuThue.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnLapPhieuThue.Size = new System.Drawing.Size(146, 47);
+            this.btnLapPhieuThue.Size = new System.Drawing.Size(182, 59);
             this.btnLapPhieuThue.TabIndex = 17;
             this.btnLapPhieuThue.Text = "Lập phiếu thuê";
             this.btnLapPhieuThue.Click += new System.EventHandler(this.btnXoaKH_Click);
@@ -274,10 +277,11 @@ namespace QLKSThangLong
             // btnResetKH
             // 
             this.btnResetKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResetKH.ImageOptions.Image")));
-            this.btnResetKH.Location = new System.Drawing.Point(194, 429);
+            this.btnResetKH.Location = new System.Drawing.Point(204, 518);
+            this.btnResetKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnResetKH.Name = "btnResetKH";
             this.btnResetKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnResetKH.Size = new System.Drawing.Size(94, 38);
+            this.btnResetKH.Size = new System.Drawing.Size(118, 48);
             this.btnResetKH.TabIndex = 16;
             this.btnResetKH.Text = "Reset";
             this.btnResetKH.Click += new System.EventHandler(this.btnResetKH_Click);
@@ -285,10 +289,11 @@ namespace QLKSThangLong
             // btnCapNhatKH
             // 
             this.btnCapNhatKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhatKH.ImageOptions.Image")));
-            this.btnCapNhatKH.Location = new System.Drawing.Point(194, 358);
+            this.btnCapNhatKH.Location = new System.Drawing.Point(204, 430);
+            this.btnCapNhatKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCapNhatKH.Name = "btnCapNhatKH";
             this.btnCapNhatKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnCapNhatKH.Size = new System.Drawing.Size(116, 48);
+            this.btnCapNhatKH.Size = new System.Drawing.Size(145, 60);
             this.btnCapNhatKH.TabIndex = 15;
             this.btnCapNhatKH.Text = " Cập nhật";
             this.btnCapNhatKH.Click += new System.EventHandler(this.btnCapNhatKH_Click);
@@ -297,7 +302,7 @@ namespace QLKSThangLong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 515);
+            this.ClientSize = new System.Drawing.Size(944, 636);
             this.Controls.Add(this.btnTroVeKH);
             this.Controls.Add(this.btnThemKH);
             this.Controls.Add(this.btnLapPhieuThue);
@@ -308,7 +313,7 @@ namespace QLKSThangLong
             this.Controls.Add(this.dgvQLKH);
             this.Controls.Add(this.btnCapNhatKH);
             this.Name = "KhachHang";
-            this.Text = "x`x`";
+            this.Text = "Quản lý khách hàng";
             this.Load += new System.EventHandler(this.KhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLKH)).EndInit();
             this.groupBox1.ResumeLayout(false);

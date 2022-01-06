@@ -18,12 +18,23 @@ namespace QLKSThangLong
             InitializeComponent();
         }
         DbContextQLKS db = new DbContextQLKS();
+        public string connect { get; set; }
         private void SuDungVatTu_Load(object sender, EventArgs e)
         {
             List<SUDUNGVT> SDvatTu = db.SUDUNGVTs.ToList();
             List<VATTU> vATTUs = db.VATTUs.ToList();
             FillDataDGV(SDvatTu);
             loadForm();
+            getMa();
+        }
+        private void getMa()
+        {
+            if (connect != null)
+            {
+                CbbPhong.Text = connect;
+                CbbPhong.Enabled = false;
+            }    
+                 
         }
 
         private void FillDataDGV(List<SUDUNGVT> vATTUs)

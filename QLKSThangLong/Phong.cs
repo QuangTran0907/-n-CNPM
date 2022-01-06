@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Migrations;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,8 +55,8 @@ namespace QLKSThangLong
                 dgvQLPHONG.Rows[newRow].Cells[1].Value = item.LoaiPhong;
                 dgvQLPHONG.Rows[newRow].Cells[2].Value = item.ThongTinPhong;
                 dgvQLPHONG.Rows[newRow].Cells[3].Value = item.SoNguoiToiDa;
-                dgvQLPHONG.Rows[newRow].Cells[4].Value = item.GiaPhong;
-                dgvQLPHONG.Rows[newRow].Cells[5].Value = item.TienDV;
+                dgvQLPHONG.Rows[newRow].Cells[4].Value = string.Format("{0:#,##0.00}", item.GiaPhong);
+                dgvQLPHONG.Rows[newRow].Cells[5].Value = string.Format("{0:#,##0.00}", item.TienDV);
                 dgvQLPHONG.Rows[newRow].Cells[6].Value = item.TrangThai;
 
             }
@@ -227,6 +228,11 @@ namespace QLKSThangLong
         private void btnTroVeNV_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtGiaPhong_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
